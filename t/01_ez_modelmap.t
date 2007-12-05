@@ -1,6 +1,6 @@
 use strict;
 use warnings;
-use Test::More tests => 30;
+use Test::More tests => 4;
 use WWW::MobileCarrierJP::EZWeb::ModelMap;
 
 my $info = WWW::MobileCarrierJP::EZWeb::ModelMap->scrape;
