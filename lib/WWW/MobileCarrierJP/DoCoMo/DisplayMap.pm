@@ -52,3 +52,8 @@ RE
 }
 
 1;
+__END__
+
+=head1 THANKS
+
+This code is copied from HTTP::MobileAgent :)
