@@ -6,12 +6,7 @@ our $VERSION = '0.01';
 
 =head1 NAME
 
-WWW::MobileCarrierJP - Module abstract (<= 44 characters) goes here
-
-=head1 SYNOPSIS
-
-  use WWW::MobileCarrierJP;
-  blah blah blah
+WWW::MobileCarrierJP - scrape mobile carrier information
 
 =head1 WARNINGS
 
@@ -19,11 +14,11 @@ THIS SOFTWARE IS STILL UNDER ALPHA STATUS.DON'T USE ME :)
 
 =head1 DESCRIPTION
 
-Stub documentation for this module was created by ExtUtils::ModuleMaker.
-It looks like the author of the extension was negligent enough
-to leave the stub unedited.
+Japanese Mobile Phone Carrier doesn't feed any information by the machine readable format :(
 
-Blah blah blah.
+This is good wrapper for this problem.
+
+This module makes machine readable format from html :)
 
 =head1 AUTHOR
 
