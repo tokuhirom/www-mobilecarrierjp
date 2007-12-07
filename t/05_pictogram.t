@@ -4,7 +4,12 @@ use utf8;
 use Test::Base;
 use UNIVERSAL::require;
 
-plan tests => 3*blocks;
+eval "use CAM::PDF; 1;";
+if ($@) {
+    plan skip_all => 'CAM::PDF required for testing pictogram info scraper';
+} else {
+    plan tests => 3*blocks;
+}
 
 filters {
     expected => 'yaml',
