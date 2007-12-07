@@ -34,6 +34,5 @@ t/02_ez_deviceidmap.t
 t/03_docomo_displaymap.t
 t/04_cidr.t
 t/pod.t
-t/pod_coverage.t
 tools/dump.pl
 LICENSE
