@@ -10,3 +10,4 @@
 \.gz$
 \.cvsignore
 ^9\d_.*\.t
+\.swp$

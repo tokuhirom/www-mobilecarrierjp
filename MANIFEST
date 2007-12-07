@@ -1,3 +1,4 @@
+.shipit
 Changes
 inc/Module/Install.pm
 inc/Module/Install/Base.pm
@@ -16,11 +17,23 @@ inc/Test/Builder.pm
 inc/Test/Builder/Module.pm
 inc/Test/More.pm
 lib/WWW/MobileCarrierJP.pm
-LISENCE
+lib/WWW/MobileCarrierJP/AirHPhone/CIDR.pm
+lib/WWW/MobileCarrierJP/DoCoMo/CIDR.pm
+lib/WWW/MobileCarrierJP/DoCoMo/DisplayMap.pm
+lib/WWW/MobileCarrierJP/EZWeb/CIDR.pm
+lib/WWW/MobileCarrierJP/EZWeb/DeviceIDMap.pm
+lib/WWW/MobileCarrierJP/EZWeb/ModelMap.pm
+lib/WWW/MobileCarrierJP/ThirdForce/CIDR.pm
 Makefile.PL
 MANIFEST			This list of files
 META.yml
 README
 t/00_compile.t
+t/01_ez_modelmap.t
+t/02_ez_deviceidmap.t
+t/03_docomo_displaymap.t
+t/04_cidr.t
 t/pod.t
 t/pod_coverage.t
+tools/dump.pl
+LICENSE
