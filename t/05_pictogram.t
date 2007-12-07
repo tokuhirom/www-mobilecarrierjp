@@ -4,7 +4,7 @@ use utf8;
 use Test::Base;
 use UNIVERSAL::require;
 
-eval "use CAM::PDF; 1;";
+eval "use CAM::PDF; 1;"; ## no critic.
 if ($@) {
     plan skip_all => 'CAM::PDF required for testing pictogram info scraper';
 } else {
