@@ -1,4 +1,4 @@
-package WWW::MobileCarrierJP::EZWeb::DeviceIDMap;
+package WWW::MobileCarrierJP::EZWeb::DeviceID;
 use strict;
 use warnings;
 use URI;

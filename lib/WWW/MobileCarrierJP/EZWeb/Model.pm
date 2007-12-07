@@ -1,4 +1,4 @@
-package WWW::MobileCarrierJP::EZWeb::ModelMap;
+package WWW::MobileCarrierJP::EZWeb::Model;
 use strict;
 use warnings;
 use utf8;

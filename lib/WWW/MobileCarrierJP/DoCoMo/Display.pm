@@ -1,4 +1,4 @@
-package WWW::MobileCarrierJP::DoCoMo::DisplayMap;
+package WWW::MobileCarrierJP::DoCoMo::Display;
 use strict;
 use warnings;
 use utf8;

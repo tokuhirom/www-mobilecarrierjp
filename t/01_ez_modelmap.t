@@ -1,9 +1,9 @@
 use strict;
 use warnings;
 use Test::More tests => 4;
-use WWW::MobileCarrierJP::EZWeb::ModelMap;
+use WWW::MobileCarrierJP::EZWeb::Model;
 
-my $info = WWW::MobileCarrierJP::EZWeb::ModelMap->scrape;
+my $info = WWW::MobileCarrierJP::EZWeb::Model->scrape;
 is ref($info), 'ARRAY';
 ok scalar(@$info) > 30;
 ok scalar(grep /1/, map { $_->{is_color} } @$info) > 30;
