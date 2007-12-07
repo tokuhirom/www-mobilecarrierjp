@@ -12,10 +12,17 @@ sub scrape {
         process '//tr[@valign="middle" and @bgcolor="#ffffff"]', 'devices[]' => scraper {
             process '//td[position()=1]', 'model_long', 'TEXT';
             process '//td[position()=2]', 'browser_type', 'TEXT';
-            process '//td[position()=3]', 'is_color', sub {
-                my $elem = shift;
-                $elem->as_text eq 'モノクロ' ? 0 : 1;
-            };
+
+            process '//td[position()=3]', 'is_color',
+              [ 'TEXT', sub { /モノクロ/ ? undef : 1 } ];
+            process '//td[position()=7]', 'gif',
+              [ 'TEXT', sub { /○/ ? 1 : undef } ];
+            process '//td[position()=8]', 'jpeg',
+              [ 'TEXT', sub { /○/ ? 1 : undef } ];
+            process '//td[position()=9]', 'png',
+              [ 'TEXT', sub { /○|△/ ? 1 : undef } ];
+            process '//td[position()=12]', 'flash_lite',
+              [ 'TEXT', sub { /●/ ? '2.0' : (/◎|○/ ? '1.1' : undef) } ];
         };
     };
     $scraper->scrape($uri)->{devices};
@@ -24,9 +31,6 @@ sub scrape {
 1;
 __END__
 
-=head1 NOTE
-
-だれかつづきつくってー
 
 =head1 AUTHOR
 
