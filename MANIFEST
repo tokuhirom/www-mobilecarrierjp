@@ -36,3 +36,8 @@ t/04_cidr.t
 t/pod.t
 tools/dump.pl
 LICENSE
+lib/WWW/MobileCarrierJP/DoCoMo/PictogramInfo.pm
+lib/WWW/MobileCarrierJP/EZWeb/PictogramInfo.pm
+lib/WWW/MobileCarrierJP/ThirdForce/PictogramInfo.pm
+t/05_pictogram.t
+
