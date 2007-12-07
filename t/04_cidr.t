@@ -1,8 +1,8 @@
 use strict;
 use warnings;
-use Test::More tests => 4*4;
+use Test::More tests => 5*4;
 
-my @carrier = qw/EZWeb DoCoMo AirHPhone ThirdForce/;
+my @carrier = qw/EZWeb DoCoMo AirHPhone SoftBank ThirdForce/;
 for my $carrier (@carrier) {
     my $class = "WWW::MobileCarrierJP::${carrier}::CIDR";
 
