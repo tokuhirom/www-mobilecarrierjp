@@ -3,30 +3,33 @@ use strict;
 use warnings;
 use URI;
 use Web::Scraper;
+use Carp;
+
+my $url = 'http://www.au.kddi.com/ezfactory/tec/spec/4_4.html';
 
 sub scrape {
-    my $url = 'http://www.au.kddi.com/ezfactory/tec/spec/4_4.html';
-    my $uri = URI->new($url);
+    my $result;
+    my $model;
+    my $i=1;
+    scraper {
+        process '//tr[@bgcolor="#cccccc"]/td/table[@cellspacing="1"]/tr[@bgcolor="#ffffff"]/td', 'models[]', ['TEXT', sub {
+            if ($i&1) {
+                $model = $_;
+            } else {
+                push @$result,
+                    +{
+                    model     => $model,
+                    device_id => ( $_ =~ m{/} ? [ split( '/', $_ ) ] : $_ )
+                    };
+            }
 
-    my $scraper = scraper {
-        process 'td > table > tr[bgcolor="#ffffff"]', 'models[]', scraper {
-            process
-                'tr[bgcolor="#ffffff"] > td[bgcolor="#f2f2f2"] > div.TableText',
-                'model', 'TEXT';
-            process
-                '//tr[@bgcolor="#ffffff"]/td[@bgcolor!="#f2f2f2"]/div[@class="TableText"]',
-                'device_id' => sub {
-                    my $elem = shift;
-                    my $text = $elem->as_text;
-                    return if $text =~ /HTTP_USER_AGENT/;
-                    $text =~ m{/} ? [ split( m{/}, $text ) ] : $text;
-            };
-        };
-    };
+            ++$i;
+        }];
+    }->scrape(URI->new($url));
 
     return [
-        grep { $_->{device_id} && (ref $_->{device_id} eq 'ARRAY' || $_->{device_id} =~ /^.{4}$/) }
-            @{ $scraper->scrape($uri)->{models} }
+        grep { $_->{device_id} && ((ref($_->{device_id}) eq 'ARRAY') || $_->{device_id}) }
+            @{ $result }
     ];
 }
 

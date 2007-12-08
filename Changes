@@ -1,5 +1,9 @@
 Revision history for Perl extension WWW::MobileCarrierJP
 
+0.04  Sat Dec  8 02:57:07 PST 2007
+    - bug fixed orz...
+      bug fixed in ezweb device id scraper...
+
 0.03  Fri Dec  7 19:01:38 PST 2007
          - added docomo flash site scraper
          - added thirdforce user agent scraper
