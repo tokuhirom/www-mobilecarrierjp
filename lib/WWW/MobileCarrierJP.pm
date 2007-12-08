@@ -20,6 +20,22 @@ This is good wrapper for this problem.
 
 This module makes machine readable format from html :)
 
+=head1 TODO
+
+ - softbank flash info
+
+=head1 KNOWLEDGE
+
+=head2 IMAGE
+
+=head3 ThirdForce
+
+softbank phone supports jpeg(without type C2).
+
+softbank phone supports gif(without type C, P, W).
+
+L<http://www2.developers.softbankmobile.co.jp/dp/tool_dl/download.php?docid=120&companyid=>
+
 =head1 AUTHOR
 
 Tokuhiro Matsuno <tokuhirom gmail com>
