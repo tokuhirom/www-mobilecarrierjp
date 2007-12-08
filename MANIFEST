@@ -1,5 +1,10 @@
 .shipit
 Changes
+LICENSE
+MANIFEST			This list of files
+META.yml
+Makefile.PL
+README
 inc/Module/Install.pm
 inc/Module/Install/Base.pm
 inc/Module/Install/Can.pm
@@ -20,24 +25,25 @@ lib/WWW/MobileCarrierJP.pm
 lib/WWW/MobileCarrierJP/AirHPhone/CIDR.pm
 lib/WWW/MobileCarrierJP/DoCoMo/CIDR.pm
 lib/WWW/MobileCarrierJP/DoCoMo/Display.pm
+lib/WWW/MobileCarrierJP/DoCoMo/Flash.pm
+lib/WWW/MobileCarrierJP/DoCoMo/PictogramInfo.pm
 lib/WWW/MobileCarrierJP/EZWeb/CIDR.pm
 lib/WWW/MobileCarrierJP/EZWeb/DeviceID.pm
 lib/WWW/MobileCarrierJP/EZWeb/Model.pm
+lib/WWW/MobileCarrierJP/EZWeb/PictogramInfo.pm
 lib/WWW/MobileCarrierJP/ThirdForce/CIDR.pm
-Makefile.PL
-MANIFEST			This list of files
-META.yml
-README
+lib/WWW/MobileCarrierJP/ThirdForce/PictogramInfo.pm
+lib/WWW/MobileCarrierJP/ThirdForce/UserAgent.pm
 t/00_compile.t
 t/01_ez_modelmap.t
 t/02_ez_deviceidmap.t
 t/03_docomo_displaymap.t
 t/04_cidr.t
-t/pod.t
-tools/dump.pl
-LICENSE
-lib/WWW/MobileCarrierJP/DoCoMo/PictogramInfo.pm
-lib/WWW/MobileCarrierJP/EZWeb/PictogramInfo.pm
-lib/WWW/MobileCarrierJP/ThirdForce/PictogramInfo.pm
 t/05_pictogram.t
-
+t/06_docomo_flash.t
+t/07_thirdforce_useragent.t
+t/pod.t
+tools/check_http_mobileagent_flash_map.pl
+tools/dump.pl
+tools/dump_all.pl
+tools/smoke-test.sh
