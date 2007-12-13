@@ -15,6 +15,10 @@ sub scrape {
 
             process '//td[position()=3]', 'is_color',
               [ 'TEXT', sub { /モノクロ/ ? undef : 1 } ];
+            process '//td[position()=5]', 'display_browsing',
+              [ 'TEXT', sub { /^(\d+)×(\d+)$/; +{width => $1, height => $2 } } ];
+            process '//td[position()=6]', 'display_wallpaper',
+              [ 'TEXT', sub { /^(\d+)×(\d+)$/; +{width => $1, height => $2 } } ];
             process '//td[position()=7]', 'gif',
               [ 'TEXT', sub { /○/ ? 1 : undef } ];
             process '//td[position()=8]', 'jpeg',

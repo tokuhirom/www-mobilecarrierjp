@@ -1,6 +1,6 @@
 use strict;
 use warnings;
-use Test::More tests => 13;
+use Test::More tests => 15;
 use WWW::MobileCarrierJP::EZWeb::Model;
 
 my $info = WWW::MobileCarrierJP::EZWeb::Model->scrape;
@@ -22,4 +22,7 @@ is scalar( grep { not defined $_ } map { $_->{jpeg} } @$info ), 35;
 cmp_ok scalar( grep { $_ && $_ eq '2.0' } map { $_->{flash_lite} } @$info ), '>', 30, 'flash lite 2.0';
 is scalar( grep { $_ && $_ eq '1.1' } map { $_->{flash_lite} } @$info ), 51, 'flash lite 1.1';
 is scalar( grep { not defined $_ } map { $_->{jpeg} } @$info ), 35, 'no flash lite';
+
+is_deeply $info->[0]->{display_browsing}, {width => 229, height => 245}, 'display size(browsing)';
+is_deeply $info->[0]->{display_wallpaper}, {width => 240, height => 320}, 'display size(wallpaper)';
 
