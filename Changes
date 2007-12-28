@@ -1,5 +1,9 @@
 Revision history for Perl extension WWW::MobileCarrierJP
 
+0.06
+    - oops. fixed test.
+      no feature changes included in this release.
+
 0.05
     - ezweb display size support.
 
