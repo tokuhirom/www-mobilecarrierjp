@@ -17,3 +17,22 @@ sub scrape {
 
 1;
 
+__END__
+
+=head1 NAME
+
+WWW::MobileCarrierJP::EZWeb::CIDR - get CIDR informtation from EZWeb site.
+
+=head1 SYNOPSIS
+
+    use WWW::MobileCarrierJP::EZWeb::CIDR;
+    WWW::MobileCarrierJP::EZWeb::CIDR->scrape();
+
+=head1 AUTHOR
+
+Tokuhiro Matsuno < tokuhirom gmail com >
+
+=head1 SEE ALSO
+
+L<WWW::MobileCarrierJP>
+

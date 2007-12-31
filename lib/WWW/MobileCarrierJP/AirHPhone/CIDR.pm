@@ -16,3 +16,22 @@ sub scrape {
 }
 
 1;
+__END__
+
+=head1 NAME
+
+WWW::MobileCarrierJP::AirHPhone::CIDR - get CIDR informtation from willcom site.
+
+=head1 SYNOPSIS
+
+    use WWW::MobileCarrierJP::AirHPhone::CIDR;
+    WWW::MobileCarrierJP::AirHPhone::CIDR->scrape();
+
+=head1 AUTHOR
+
+Tokuhiro Matsuno < tokuhirom gmail com >
+
+=head1 SEE ALSO
+
+L<WWW::MobileCarrierJP>
+

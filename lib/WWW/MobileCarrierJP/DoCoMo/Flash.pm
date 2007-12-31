@@ -54,6 +54,21 @@ sub _as_tree {
 1;
 __END__
 
+=head1 NAME
+
+WWW::MobileCarrierJP::DoCoMo::Flash - get flash informtation from DoCoMo site.
+
+=head1 SYNOPSIS
+
+    use WWW::MobileCarrierJP::DoCoMo::Flash;
+    WWW::MobileCarrierJP::DoCoMo::Flash->scrape();
+
+=head1 AUTHOR
+
+Tokuhiro Matsuno < tokuhirom gmail com >
+
 =head1 SEE ALSO
 
+L<WWW::MobileCarrierJP>,
 L<http://www.nttdocomo.co.jp/english/service/imode/make/content/spec/flash/index.html>
+

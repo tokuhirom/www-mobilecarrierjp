@@ -16,3 +16,22 @@ sub scrape {
 }
 
 1;
+__END__
+
+=head1 NAME
+
+WWW::MobileCarrierJP::ThirdForce::CIDR - get CIDR informtation from ThirdForce site.
+
+=head1 SYNOPSIS
+
+    use WWW::MobileCarrierJP::ThirdForce::CIDR;
+    WWW::MobileCarrierJP::ThirdForce::CIDR->scrape();
+
+=head1 AUTHOR
+
+Tokuhiro Matsuno < tokuhirom gmail com >
+
+=head1 SEE ALSO
+
+L<WWW::MobileCarrierJP>
+

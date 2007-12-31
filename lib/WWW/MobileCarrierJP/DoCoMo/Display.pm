@@ -54,6 +54,26 @@ RE
 1;
 __END__
 
+=head1 NAME
+
+WWW::MobileCarrierJP::DoCoMo::Display - get display informtation from DoCoMo site.
+
+=head1 SYNOPSIS
+
+    use WWW::MobileCarrierJP::DoCoMo::Display;
+    WWW::MobileCarrierJP::DoCoMo::Display->scrape();
+
+=head1 AUTHOR
+
+Tokuhiro Matsuno < tokuhirom gmail com >
+
 =head1 THANKS
 
 This code is copied from HTTP::MobileAgent :)
+
+thanks H-MA authors.
+
+=head1 SEE ALSO
+
+L<WWW::MobileCarrierJP>
+

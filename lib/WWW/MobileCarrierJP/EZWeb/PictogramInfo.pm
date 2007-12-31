@@ -40,9 +40,27 @@ sub _process_pdf {
 1;
 __END__
 
+=head1 NAME
+
+WWW::MobileCarrierJP::EZWeb::PictogramInfo - get PictogramInfo informtation from EZWeb site.
+
+=head1 SYNOPSIS
+
+    use WWW::MobileCarrierJP::EZWeb::PictogramInfo;
+    WWW::MobileCarrierJP::EZWeb::PictogramInfo->scrape();
+
+=head1 AUTHOR
+
+Tokuhiro Matsuno < tokuhirom gmail com >
+
 =head1 THANKS
 
 This code is copied from Encode-JP-Mobile.
 
 miyagawa++
+
+
+=head1 SEE ALSO
+
+L<WWW::MobileCarrierJP>
 

@@ -2,7 +2,11 @@ package WWW::MobileCarrierJP;
 use strict;
 use warnings;
 
-our $VERSION = '0.06';
+our $VERSION = '0.07';
+
+1;
+
+__END__
 
 =head1 NAME
 
@@ -47,7 +51,3 @@ it and/or modify it under the same terms as Perl itself.
 
 The full text of the license can be found in the
 LICENSE file included with this module.
-
-=cut
-
-1;

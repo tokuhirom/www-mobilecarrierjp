@@ -50,9 +50,26 @@ sub scrape {
 1;
 __END__
 
+=head1 NAME
+
+WWW::MobileCarrierJP::DoCoMo::PictogramInfo - get pictogram informtation from DoCoMo site.
+
+=head1 SYNOPSIS
+
+    use WWW::MobileCarrierJP::DoCoMo::PictogramInfo;
+    WWW::MobileCarrierJP::DoCoMo::PictogramInfo->scrape();
+
+=head1 AUTHOR
+
+Tokuhiro Matsuno < tokuhirom gmail com >
+
 =head1 THANKS
 
 This code is copied from Encode-JP-Mobile.
 
 miyagawa++
+
+=head1 SEE ALSO
+
+L<WWW::MobileCarrierJP>
 

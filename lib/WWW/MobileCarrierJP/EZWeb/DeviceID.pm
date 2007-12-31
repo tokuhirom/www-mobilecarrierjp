@@ -34,3 +34,22 @@ sub scrape {
 }
 
 1;
+__END__
+
+=head1 NAME
+
+WWW::MobileCarrierJP::EZWeb::DeviceID - get DeviceID informtation from EZWeb site.
+
+=head1 SYNOPSIS
+
+    use WWW::MobileCarrierJP::EZWeb::DeviceID;
+    WWW::MobileCarrierJP::EZWeb::DeviceID->scrape();
+
+=head1 AUTHOR
+
+Tokuhiro Matsuno < tokuhirom gmail com >
+
+=head1 SEE ALSO
+
+L<WWW::MobileCarrierJP>
+

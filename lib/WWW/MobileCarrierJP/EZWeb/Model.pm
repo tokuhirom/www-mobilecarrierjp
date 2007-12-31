@@ -35,7 +35,20 @@ sub scrape {
 1;
 __END__
 
+=head1 NAME
+
+WWW::MobileCarrierJP::EZWeb::Model - get Model informtation from EZWeb site.
+
+=head1 SYNOPSIS
+
+    use WWW::MobileCarrierJP::EZWeb::Model;
+    WWW::MobileCarrierJP::EZWeb::Model->scrape();
 
 =head1 AUTHOR
 
-Tokuhiro MATSUNO
+Tokuhiro Matsuno < tokuhirom gmail com >
+
+=head1 SEE ALSO
+
+L<WWW::MobileCarrierJP>
+
