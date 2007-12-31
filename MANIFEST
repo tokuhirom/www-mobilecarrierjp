@@ -45,5 +45,5 @@ t/07_thirdforce_useragent.t
 t/pod.t
 tools/check_http_mobileagent_flash_map.pl
 tools/dump.pl
-tools/dump_all.pl
+tools/www-mobilecarrierjp-dump_all.pl
 tools/smoke-test.sh
