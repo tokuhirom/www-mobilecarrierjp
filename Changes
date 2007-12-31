@@ -1,5 +1,8 @@
 Revision history for Perl extension WWW::MobileCarrierJP
 
+0.08
+    - install www-mobilecarrierjp-dump_all.pl.
+
 0.07
     more docs.
     no feature cheangs.

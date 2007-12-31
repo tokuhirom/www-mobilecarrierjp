@@ -14,5 +14,8 @@ features(
 
 build_requires 'Test::More';
 use_test_base;
+
+install_script('tools/www-mobilecarrierjp-dump_all.pl');
+
 auto_include;
 WriteAll;
