@@ -48,3 +48,5 @@ tools/check_http_mobileagent_flash_map.pl
 tools/dump.pl
 tools/smoke-test.sh
 tools/www-mobilecarrierjp-dump_all.pl
+lib/WWW/MobileCarrierJP/DoCoMo/HTMLVersion.pm
+t/08_docomo_htmlversion.t
