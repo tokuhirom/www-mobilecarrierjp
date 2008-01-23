@@ -20,6 +20,7 @@ is_deeply map({ $_->{models} } grep { $_->{version} eq '7.0' } @$vermap), [
       SH904i N904i F904i D904i P904i
       SO704i F704i N704imyu SH704i D704i P704i
       F883iES F801i
+      F705i D705i D705imyu
       /
 ];
 
