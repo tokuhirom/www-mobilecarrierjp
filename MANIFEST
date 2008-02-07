@@ -22,7 +22,9 @@ lib/WWW/MobileCarrierJP/AirHPhone/CIDR.pm
 lib/WWW/MobileCarrierJP/DoCoMo/CIDR.pm
 lib/WWW/MobileCarrierJP/DoCoMo/Display.pm
 lib/WWW/MobileCarrierJP/DoCoMo/Flash.pm
+lib/WWW/MobileCarrierJP/DoCoMo/HTMLVersion.pm
 lib/WWW/MobileCarrierJP/DoCoMo/PictogramInfo.pm
+lib/WWW/MobileCarrierJP/EZWeb/BREW.pm
 lib/WWW/MobileCarrierJP/EZWeb/CIDR.pm
 lib/WWW/MobileCarrierJP/EZWeb/DeviceID.pm
 lib/WWW/MobileCarrierJP/EZWeb/Model.pm
@@ -43,10 +45,10 @@ t/04_cidr.t
 t/05_pictogram.t
 t/06_docomo_flash.t
 t/07_thirdforce_useragent.t
+t/08_docomo_htmlversion.t
+t/09_ezweb_brew.t
 t/pod.t
 tools/check_http_mobileagent_flash_map.pl
 tools/dump.pl
 tools/smoke-test.sh
 tools/www-mobilecarrierjp-dump_all.pl
-lib/WWW/MobileCarrierJP/DoCoMo/HTMLVersion.pm
-t/08_docomo_htmlversion.t
