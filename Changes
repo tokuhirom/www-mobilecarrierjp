@@ -1,5 +1,11 @@
 Revision history for Perl extension WWW::MobileCarrierJP
 
+0.14
+
+    - (No feature changes)
+    - test fixed(reported by yappo++)
+      TU-KA is DEAD.
+
 0.13
 
     - fixed the bug in the tests.
