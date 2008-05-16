@@ -31,6 +31,7 @@ lib/WWW/MobileCarrierJP/EZWeb/Model.pm
 lib/WWW/MobileCarrierJP/EZWeb/PictogramInfo.pm
 lib/WWW/MobileCarrierJP/ThirdForce/CIDR.pm
 lib/WWW/MobileCarrierJP/ThirdForce/PictogramInfo.pm
+lib/WWW/MobileCarrierJP/ThirdForce/Service.pm
 lib/WWW/MobileCarrierJP/ThirdForce/UserAgent.pm
 LICENSE
 Makefile.PL
@@ -47,6 +48,7 @@ t/06_docomo_flash.t
 t/07_thirdforce_useragent.t
 t/08_docomo_htmlversion.t
 t/09_ezweb_brew.t
+t/10_thirdforce_service.t
 t/pod.t
 tools/check_http_mobileagent_flash_map.pl
 tools/dump.pl

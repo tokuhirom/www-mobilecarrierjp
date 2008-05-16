@@ -1,5 +1,10 @@
 Revision history for Perl extension WWW::MobileCarrierJP
 
+0.15
+
+    - added service info scraper for thirdforce
+      service info contains flash, gps, etc.
+
 0.14
 
     - (No feature changes)
