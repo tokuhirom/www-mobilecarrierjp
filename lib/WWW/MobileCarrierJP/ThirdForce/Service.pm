@@ -3,7 +3,6 @@ use strict;
 use warnings;
 use utf8;
 use charnames ':full';
-use boolean ':all';
 use Web::Scraper;
 use URI;
 
