@@ -3,6 +3,8 @@ use strict;
 use warnings;
 use Web::Scraper;
 use URI;
+use Encode;
+use charnames ':full';
 
 my $uri = URI->new("http://www.nttdocomo.co.jp/service/imode/make/content/spec/useragent/");
 
@@ -15,8 +17,18 @@ sub scrape {
             process '//td[@class!="acenter middle" and @class!="brownLight acenter middle" and 0=count(preceding-sibling::td[@class!="acenter middle"])]',
               'models[]',
               [
-                'TEXT',
-                sub { s/\x{FF08}.+//; s/\x{a0}//; s/\x{3bc}/myu/; s/4$//; }
+                sub {
+                    # I want first text element in <td>
+                    $_ = $_->content->[0]; # get span
+                    $_ = $_->content->[0]; # get text
+                    $_;
+                },
+                sub {
+                    s/\x{a0}.*$//; # cut after space
+                    s/\N{FULLWIDTH LEFT PARENTHESIS}.*//;
+                    s/\N{GREEK SMALL LETTER MU}/myu/;
+                    $_;
+                }
               ];
         };
     };
