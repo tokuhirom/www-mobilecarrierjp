@@ -1,5 +1,11 @@
 Revision history for Perl extension WWW::MobileCarrierJP
 
+0.16
+
+    - bug fixed: around ※
+    - enhancement the tests
+    - i don't need boolean.pm
+
 0.15
 
     - added service info scraper for thirdforce
