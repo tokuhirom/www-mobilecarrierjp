@@ -4,7 +4,7 @@ use warnings;
 use Web::Scraper;
 use URI;
 
-my $url = 'http://developers.softbankmobile.co.jp/dp/tech_svc/web/ip.php';
+my $url = 'http://creation.mb.softbank.jp/web/web_ip.html';
 
 sub scrape {
     scraper {

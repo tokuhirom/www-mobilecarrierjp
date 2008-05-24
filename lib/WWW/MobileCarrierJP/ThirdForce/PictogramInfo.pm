@@ -4,7 +4,7 @@ use warnings;
 use Web::Scraper;
 use URI;
 
-my @urls = map "http://developers.softbankmobile.co.jp/dp/tool_dl/web/picword_0$_.php", 1..6;
+my @urls = map { sprintf 'http://creation.mb.softbank.jp/web/web_pic_%02d.php' } 1..6;
 
 sub scrape {
     my $res;
