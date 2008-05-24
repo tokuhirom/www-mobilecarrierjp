@@ -8,7 +8,7 @@ eval "use CAM::PDF; 1;"; ## no critic.
 if ($@) {
     plan skip_all => 'CAM::PDF required for testing pictogram info scraper';
 } else {
-    plan tests => 3*blocks;
+    plan tests => 4*blocks;
 }
 
 filters {
@@ -24,7 +24,9 @@ run {
 
     is ref($dat), 'ARRAY', $block->input;
     cmp_ok scalar(@$dat), '>', 100;
-    is_deeply $dat->[0], $block->expected;
+    my ($row, ) = grep { $block->expected->{unicode} eq $_->{unicode} } @$dat;
+    ok $row, "got this unicode";
+    is_deeply $row, $block->expected;
 };
 
 __END__
@@ -54,4 +56,28 @@ unicode: E63E
 --- expected
 unicode: E001
 sjis: 1b2447210f
+
+===
+--- input: ThirdForce
+--- expected
+unicode: E02D
+sjis: 1b24474d0f
+
+===
+--- input: ThirdForce
+--- expected
+unicode: E02E
+sjis: 1b24474e0f
+
+===
+--- input: ThirdForce
+--- expected
+unicode: E05A
+sjis: 1b24477a0f
+
+===
+--- input: ThirdForce
+--- expected
+unicode: E537
+sjis: 1b2451570f
 
