@@ -8,10 +8,17 @@ my $url = 'http://creation.mb.softbank.jp/web/web_ip.html';
 
 sub scrape {
     scraper {
-        process '//td[@bgcolor="#eeeeee"]/font[@size="2" and @class="j10"]', 'cidr[]', ['TEXT', sub {
-                        m{^([0-9.]+)(/[0-9]+)};
-                        +{ ip => $1, subnetmask => $2 };
-                    }];
+        process q{//div[@class='contents']/table/tr[7]/td/table/tr/td/table/tr},
+          'cidr[]', [
+            'TEXT',
+            sub {
+                s/\s//g
+            },
+            sub {
+                m{^([0-9.]+)(/[0-9]+)};
+                +{ ip => $1, subnetmask => $2 };
+              }
+          ];
     }->scrape(URI->new($url))->{cidr};
 }
 
