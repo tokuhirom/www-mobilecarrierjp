@@ -1,13 +1,8 @@
 package WWW::MobileCarrierJP::DoCoMo::HTMLVersion;
 use strict;
 use warnings;
-use Web::Scraper;
-use URI;
-use Encode;
 use charnames ':full';
 use WWW::MobileCarrierJP::Declare;
-
-my $uri = URI->new("http://www.nttdocomo.co.jp/service/imode/make/content/spec/useragent/");
 
 parse_one(
     urls => ["http://www.nttdocomo.co.jp/service/imode/make/content/spec/useragent/"],
