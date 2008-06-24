@@ -4,10 +4,10 @@ use warnings;
 use utf8;
 use WWW::MobileCarrierJP::Declare;
 
-my @urls = map { sprintf 'http://creation.mb.softbank.jp/terminal/spec_head_%02d.html', $_ } 1..4;
+my $url = 'http://creation.mb.softbank.jp/terminal/?lup=y&cat=http';
 
 parse_one(
-    urls  => \@urls,
+    urls  => [$url],
     xpath => '//div/table/tr/td/table[@bordercolor="#999999"]/tr[not(@bgcolor="#ee9abb") and not(@bgcolor="#cccccc") and count(child::td) = 8]',
     scraper => scraper {
         process 'td:nth-child(1)', 'model', 'TEXT';
