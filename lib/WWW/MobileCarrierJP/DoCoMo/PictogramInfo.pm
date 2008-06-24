@@ -1,15 +1,14 @@
 package WWW::MobileCarrierJP::DoCoMo::PictogramInfo;
 use strict;
 use warnings;
-use HTML::Selector::XPath 0.03;
-use Web::Scraper;
-use URI;
+use WWW::MobileCarrierJP::Declare;
 
-my @url = (
-    URI->new("http://www.nttdocomo.co.jp/service/imode/make/content/pictograph/basic/index.html"),
-    URI->new("http://www.nttdocomo.co.jp/english/service/imode/make/content/pictograph/basic/index.html"),
-    URI->new("http://www.nttdocomo.co.jp/service/imode/make/content/pictograph/extention/index.html"),
-    URI->new("http://www.nttdocomo.co.jp/english/service/imode/make/content/pictograph/extention/index.html"),
+my @url =
+    map { URI->new($_) } (
+    "http://www.nttdocomo.co.jp/service/imode/make/content/pictograph/basic/index.html",
+    "http://www.nttdocomo.co.jp/english/service/imode/make/content/pictograph/basic/index.html",
+    "http://www.nttdocomo.co.jp/service/imode/make/content/pictograph/extention/index.html",
+    "http://www.nttdocomo.co.jp/english/service/imode/make/content/pictograph/extention/index.html",
 );
 
 sub scrape {
@@ -17,15 +16,16 @@ sub scrape {
     my $i;
     my @prev;
     for my $uri (@url) {
-        my $scraper = scraper {
-            process 'tr', 'characters[]', scraper {
-                process 'td:nth-child(3)', 'sjis', 'TEXT';
-                process 'td:nth-child(5)', 'unicode', 'TEXT';
-                process 'td:nth-child(6)', 'name',  'TEXT';
-                process 'td:nth-child(7)', 'color', 'TEXT';
-            };
+        my @chars = @{
+            scraper {
+                process 'tr', 'characters[]', scraper {
+                    col 3, 'sjis',    'TEXT';
+                    col 5, 'unicode', 'TEXT';
+                    col 6, 'name',    'TEXT';
+                    col 7, 'color',   'TEXT';
+                };
+            }->scrape($uri)->{characters}
         };
-        my @chars = @{ $scraper->scrape($uri)->{characters} };
 
         # remove headers
         shift @chars; shift @chars;
