@@ -7,7 +7,6 @@ inc/Module/Install/Fetch.pm
 inc/Module/Install/Include.pm
 inc/Module/Install/Makefile.pm
 inc/Module/Install/Metadata.pm
-inc/Module/Install/Scripts.pm
 inc/Module/Install/TestBase.pm
 inc/Module/Install/Win32.pm
 inc/Module/Install/WriteAll.pm
@@ -19,6 +18,7 @@ inc/Test/Builder/Module.pm
 inc/Test/More.pm
 lib/WWW/MobileCarrierJP.pm
 lib/WWW/MobileCarrierJP/AirHPhone/CIDR.pm
+lib/WWW/MobileCarrierJP/Declare.pm
 lib/WWW/MobileCarrierJP/DoCoMo/CIDR.pm
 lib/WWW/MobileCarrierJP/DoCoMo/Display.pm
 lib/WWW/MobileCarrierJP/DoCoMo/Flash.pm
@@ -30,6 +30,7 @@ lib/WWW/MobileCarrierJP/EZWeb/DeviceID.pm
 lib/WWW/MobileCarrierJP/EZWeb/Model.pm
 lib/WWW/MobileCarrierJP/EZWeb/PictogramInfo.pm
 lib/WWW/MobileCarrierJP/ThirdForce/CIDR.pm
+lib/WWW/MobileCarrierJP/ThirdForce/HTTPHeader.pm
 lib/WWW/MobileCarrierJP/ThirdForce/PictogramInfo.pm
 lib/WWW/MobileCarrierJP/ThirdForce/Service.pm
 lib/WWW/MobileCarrierJP/ThirdForce/UserAgent.pm
@@ -49,6 +50,7 @@ t/07_thirdforce_useragent.t
 t/08_docomo_htmlversion.t
 t/09_ezweb_brew.t
 t/10_thirdforce_service.t
+t/11_thirdforce_headers.t
 t/pod.t
 tools/check_http_mobileagent_flash_map.pl
 tools/dump.pl
