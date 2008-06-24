@@ -5,11 +5,11 @@ use utf8;
 use charnames ':full';
 use WWW::MobileCarrierJP::Declare;
 
-my @urls = map { sprintf 'http://creation.mb.softbank.jp/terminal/spec_serv_%02d.html', $_ } 1..4;
+my $url = 'http://creation.mb.softbank.jp/terminal/?lup=y&cat=service';
 my $xpath = '//div/table/tr/td/table[@bordercolor="#999999"]/tr[not(@bgcolor="#ee9abb") and not(@bgcolor="#cccccc") and count(child::td) = 7]';
 
 parse_one(
-    urls    => \@urls,
+    urls    => [$url],
     xpath   => $xpath,
     scraper => scraper {
         col 1 => 'model', 'TEXT';
