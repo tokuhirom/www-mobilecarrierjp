@@ -106,26 +106,6 @@ pc_browser : 0
 
 ===
 --- info
-model      : V801SH
-flashlite  : ~
-sappli     : 1
-gps_basic  : 0
-gps_agps   : 0
-felica     : 0
-pc_browser : 0
-
-===
---- info
-model      : V801SA
-flashlite  : ~
-sappli     : 1
-gps_basic  : 0
-gps_agps   : 0
-felica     : 0
-pc_browser : 0
-
-===
---- info
 model      : V604T
 flashlite  : ~
 sappli     : 1
