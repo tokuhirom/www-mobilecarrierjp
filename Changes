@@ -1,5 +1,10 @@
 Revision history for Perl extension WWW::MobileCarrierJP
 
+0.19
+
+    - fixed test: NM706i was released...
+                  this model supports HTML version 4.0...
+
 0.18
 
     - good bye tu-ka...
