@@ -1,5 +1,11 @@
 Revision history for Perl extension WWW::MobileCarrierJP
 
+0.20
+
+    - INCOMPATIBLILITY: WWW::MobileCarrierJP::ThirdForce::UserAgent
+      softbank changes developers site structure.
+      softbank--
+
 0.19
 
     - fixed test: NM706i was released...
