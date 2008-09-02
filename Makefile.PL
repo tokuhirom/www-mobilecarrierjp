@@ -2,8 +2,8 @@ use inc::Module::Install;
 name 'WWW-MobileCarrierJP';
 all_from 'lib/WWW/MobileCarrierJP.pm';
 
-requires 'Web::Scraper' => '0.24';
-requires 'Exporter'     => '5.58';
+requires 'Web::Scraper'  => '0.24';
+requires 'Sub::Exporter' => '0.979';
 requires 'HTML::Selector::XPath' => '0.03';
 
 features(

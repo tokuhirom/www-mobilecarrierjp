@@ -1,11 +1,25 @@
 package WWW::MobileCarrierJP::Declare;
 use strict;
 use warnings;
-use Exporter 'import';
+use utf8;
 use Web::Scraper;
 use URI;
+use Sub::Exporter;
 
-our @EXPORT = qw/parse_one scraper process col/;
+my $exporter = Sub::Exporter::build_exporter(
+    {
+        exports => [qw(parse_one scraper process col)],
+        groups  => { default => [':all'] }
+    },
+);
+
+sub import {
+    strict->import;
+    warnings->import;
+    utf8->import;
+
+    goto $exporter;
+}
 
 sub col {
     my ($n, @args) = @_;

@@ -1,8 +1,5 @@
 package WWW::MobileCarrierJP::ThirdForce::UserAgent;
-use strict;
-use warnings;
 use WWW::MobileCarrierJP::Declare;
-use URI;
 
 parse_one( 
     urls => ['http://creation.mb.softbank.jp/terminal/index.html'],
