@@ -4,7 +4,7 @@ use warnings;
 use Web::Scraper;
 use URI;
 
-my $url = 'http://creation.mb.softbank.jp/web/web_ip.html';
+sub url { 'http://creation.mb.softbank.jp/web/web_ip.html'; }
 
 sub scrape {
     scraper {
@@ -19,7 +19,7 @@ sub scrape {
                 +{ ip => $1, subnetmask => $2 };
               }
           ];
-    }->scrape(URI->new($url))->{cidr};
+    }->scrape(URI->new(__PACKAGE__->url))->{cidr};
 }
 
 1;

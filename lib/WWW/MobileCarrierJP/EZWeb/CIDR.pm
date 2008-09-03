@@ -4,7 +4,7 @@ use warnings;
 use Web::Scraper;
 use URI;
 
-my $url = 'http://www.au.kddi.com/ezfactory/tec/spec/ezsava_ip.html';
+sub url { 'http://www.au.kddi.com/ezfactory/tec/spec/ezsava_ip.html'; }
 
 sub scrape {
     scraper {
@@ -12,7 +12,7 @@ sub scrape {
             process '//td[position()=2]/div', 'ip',         'TEXT';
             process '//td[position()=3]/div', 'subnetmask', 'TEXT';
         };
-    }->scrape(URI->new($url))->{ip};
+    }->scrape(URI->new(__PACKAGE__->url))->{ip};
 }
 
 1;

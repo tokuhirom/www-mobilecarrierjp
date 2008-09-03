@@ -4,7 +4,7 @@ use warnings;
 use Web::Scraper;
 use URI;
 
-my $url = 'http://www.nttdocomo.co.jp/service/imode/make/content/ip/';
+sub url { 'http://www.nttdocomo.co.jp/service/imode/make/content/ip/'; }
 
 sub scrape {
     scraper {
@@ -15,7 +15,7 @@ sub scrape {
                         +{ ip => $1, subnetmask => $2 };
                     }
                 ];
-    }->scrape(URI->new($url))->{cidr};
+    }->scrape(URI->new(__PACKAGE__->url))->{cidr};
 }
 
 1;
