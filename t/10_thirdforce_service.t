@@ -53,6 +53,7 @@ gps_basic  : 1
 gps_agps   : 0
 felica     : 1
 pc_browser : 1
+mobile_widget: 0
 
 ===
 --- info
@@ -63,6 +64,7 @@ gps_basic  : 0
 gps_agps   : 0
 felica     : 0
 pc_browser : 1
+mobile_widget: 0
 
 ===
 --- info
@@ -73,6 +75,7 @@ gps_basic  : 0
 gps_agps   : 0
 felica     : 0
 pc_browser : 0
+mobile_widget: 0
 
 ===
 --- info
@@ -83,6 +86,7 @@ gps_basic  : 0
 gps_agps   : 0
 felica     : 0
 pc_browser : 0
+mobile_widget: 0
 
 ===
 --- info
@@ -93,6 +97,7 @@ gps_basic  : 0
 gps_agps   : 0
 felica     : 0
 pc_browser : 0
+mobile_widget: 0
 
 ===
 --- info
@@ -103,6 +108,7 @@ gps_basic  : 1
 gps_agps   : 0
 felica     : 0
 pc_browser : 0
+mobile_widget: 0
 
 ===
 --- info
@@ -113,6 +119,7 @@ gps_basic  : 1
 gps_agps   : 0
 felica     : 0
 pc_browser : 0
+mobile_widget: 0
 
 ===
 --- info
@@ -123,6 +130,7 @@ gps_basic  : 1
 gps_agps   : 0
 felica     : 0
 pc_browser : 0
+mobile_widget: 0
 
 ===
 --- info
@@ -133,6 +141,7 @@ gps_basic  : 1
 gps_agps   : 0
 felica     : 0
 pc_browser : 0
+mobile_widget: 0
 
 ===
 --- info
@@ -143,6 +152,7 @@ gps_basic  : 1
 gps_agps   : 0
 felica     : 0
 pc_browser : 0
+mobile_widget: 0
 
 ===
 --- info
@@ -153,6 +163,7 @@ gps_basic  : 1
 gps_agps   : 0
 felica     : 0
 pc_browser : 0
+mobile_widget: 0
 
 ===
 --- info
@@ -163,6 +174,7 @@ gps_basic  : 1
 gps_agps   : 0
 felica     : 0
 pc_browser : 0
+mobile_widget: 0
 
 ===
 --- info
@@ -173,5 +185,6 @@ gps_basic  : 0
 gps_agps   : 0
 felica     : 0
 pc_browser : 0
+mobile_widget: 0
 
 
