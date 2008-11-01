@@ -51,6 +51,7 @@ t/08_docomo_htmlversion.t
 t/09_ezweb_brew.t
 t/10_thirdforce_service.t
 t/11_thirdforce_headers.t
+t/12_cidr_url.t
 t/pod.t
 tools/check_http_mobileagent_flash_map.pl
 tools/dump.pl
