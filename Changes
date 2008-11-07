@@ -2,7 +2,7 @@ Revision history for Perl extension WWW::MobileCarrierJP
 
 0.23
 
-    - ezweb site injects white space in the td!
+    - ezweb site injects white space in the td!(reported by nobjas++)
 
 0.22
 
