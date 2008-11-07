@@ -1,5 +1,9 @@
 Revision history for Perl extension WWW::MobileCarrierJP
 
+0.22
+
+    - f*cking docomo changed html.
+
 0.21
 
     - fixed some code for renewal softbank site
