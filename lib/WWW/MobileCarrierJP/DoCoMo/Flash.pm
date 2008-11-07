@@ -15,7 +15,7 @@ parse_one(
         process '//h2/a/text()', 'version', ['TEXT', sub { s/^Flash Lite // }];
         process '//tr[@class="acenter"]', 'models[]', [sub {
             my $elem = $_;
-            my $tree = _as_tree($elem);
+            my $tree = as_tree($elem);
             $_->delete for $tree->findnodes('//td[@class="brownLight acenter middle"]');
             $_->delete for $tree->findnodes('//td[@class="acenter middle"]');
             # remove series info.
@@ -41,14 +41,6 @@ parse_one(
         }];
     },
 );
-
-sub _as_tree {
-    my $self = shift;
-
-    my $tree = HTML::TreeBuilder::XPath->new;
-    $tree->parse($self->as_HTML);
-    $tree;
-}
 
 1;
 __END__

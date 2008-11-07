@@ -8,7 +8,7 @@ use Sub::Exporter;
 
 my $exporter = Sub::Exporter::build_exporter(
     {
-        exports => [qw(parse_one scraper process col)],
+        exports => [qw(parse_one scraper process col as_tree)],
         groups  => { default => [':all'] }
     },
 );
@@ -43,7 +43,15 @@ sub parse_one {
         }
         return \@res;
     };
-
 }
+
+sub as_tree {
+    my $old = shift;
+
+    my $tree = HTML::TreeBuilder::XPath->new;
+    $tree->parse($old->as_HTML);
+    $tree;
+}
+
 
 1;
