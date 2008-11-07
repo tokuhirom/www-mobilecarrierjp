@@ -12,7 +12,7 @@ sub scrape {
     my $model;
     my $i=1;
     scraper {
-        process '//tr[@bgcolor="#cccccc"]/td/table[@cellspacing="1"]/tr[@bgcolor="#ffffff"]/td', 'models[]', ['TEXT', sub {
+        process '//tr[@bgcolor="#cccccc"]/td/table[@cellspacing="1"]/tr[@bgcolor="#ffffff"]/td', 'models[]', ['TEXT', sub { s/\s// }, sub {
             if ($i&1) {
                 $model = $_;
             } else {
