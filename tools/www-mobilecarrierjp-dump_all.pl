@@ -9,6 +9,8 @@ use Module::Pluggable::Fast name => 'components', search => ['WWW::MobileCarrier
 my $datdir = File::Spec->catfile($FindBin::Bin, '..', 'dat');
 mkdir $datdir;
 for my $module (components()) {
+    next if $module eq 'WWW::MobileCarrierJP::Declare';
+
     my $fname = $module;
     $fname =~ s/^WWW::MobileCarrierJP:://;
     $fname =~ s/::/-/g;
