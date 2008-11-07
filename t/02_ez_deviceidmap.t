@@ -1,6 +1,7 @@
 use strict;
 use warnings;
-use Test::More tests => 9;
+use utf8;
+use Test::More tests => 10;
 use WWW::MobileCarrierJP::EZWeb::DeviceID;
 
 my $dat = WWW::MobileCarrierJP::EZWeb::DeviceID->scrape;
@@ -13,6 +14,7 @@ is(get_device_id('W53SA'), 'ST32', 'single');
 is(get_device_id('C3002K'), 'KC21', 'single');
 is(get_device_id('C3001H'), 'HI21', 'single');
 is(get_device_id('B01K'), 'KC26', 'single');
+is(get_device_id('INFOBAR 2'), 'ST33', 'single');
 
 sub get_device_id {
     my $model = shift;
