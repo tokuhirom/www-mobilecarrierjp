@@ -42,7 +42,7 @@ sub _get {
 
 sub _regexp {
     return <<'RE';
-<td><span class="txt">([A-Z]+\d+\w*\+?).*?</span></td>
+<td(?: colspan="2")?><span class="txt">([A-Z]+-?\d+\w*\+?).*?</span></td>
 <td><span class="txt">.*?(?:</span></td>)?
 <td><span class="txt">.*?(?:</span></td>)?
 <td><span class="txt">.*?(\d+)×(\d+).*?</span></td>
