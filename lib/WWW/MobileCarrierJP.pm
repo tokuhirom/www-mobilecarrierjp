@@ -2,7 +2,7 @@ package WWW::MobileCarrierJP;
 use strict;
 use warnings;
 
-our $VERSION = '0.23';
+our $VERSION = '0.24';
 
 1;
 
@@ -43,6 +43,11 @@ L<http://www2.developers.softbankmobile.co.jp/dp/tool_dl/download.php?docid=120&
 =head1 AUTHOR
 
 Tokuhiro Matsuno <tokuhirom gmail com>
+
+=head1 THANKS TO
+
+nobjas
+kazeburo
 
 =head1 COPYRIGHT
 
