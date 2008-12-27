@@ -13,7 +13,7 @@ my $dat = WWW::MobileCarrierJP::DoCoMo::Flash->scrape;
 for my $version (@$dat) {
     for my $model (@{$version->{models}}) {
         unless (exists $FLASH_MAP->{$model->{model}}) {
-            warn "orz: $model";
+            warn "orz: $model->{model}";
         }
     }
 }
