@@ -1,5 +1,9 @@
 Revision history for Perl extension WWW::MobileCarrierJP
 
+0.25
+
+    - updated scraper for Willcom CIDR
+
 0.24
 
     - DoCoMoのDisplay情報 新機種に対応(by kazeburo++)
