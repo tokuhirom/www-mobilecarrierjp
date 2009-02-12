@@ -10,5 +10,6 @@
 \.gz$
 \.cvsignore
 ^9\d_.*\.t
-\.swp$
+\.sw[po]$
 ^dat/
+^.git/

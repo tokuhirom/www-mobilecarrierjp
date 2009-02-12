@@ -1,7 +1,1 @@
 steps = FindVersion, ChangeVersion, CheckChangeLog, DistTest, Commit, MakeDist, UploadCPAN
-
-# if directory, where the normal "make dist" puts its file.
-#MakeDist.destination = ~/shipit-dist
-#svn.tagpattern = ShipIt-%v
-
-#CheckChangeLog.files = ChangeLog
