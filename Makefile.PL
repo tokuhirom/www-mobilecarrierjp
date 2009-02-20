@@ -3,7 +3,7 @@ name 'WWW-MobileCarrierJP';
 all_from 'lib/WWW/MobileCarrierJP.pm';
 
 requires 'Web::Scraper'  => '0.24';
-requires 'Sub::Exporter' => '0.979';
+requires 'Exporter' => '0.60';
 requires 'HTML::Selector::XPath' => '0.03';
 
 features(
