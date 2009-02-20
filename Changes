@@ -1,5 +1,10 @@
 Revision history for Perl extension WWW::MobileCarrierJP
 
+0.27
+
+    - use Exporter instead of Sub::Exporter
+      Exporter is good enough for this module.
+
 0.26
 
     - F - U - C - K(thanks to lestrrat++)
