@@ -1,6 +1,6 @@
 use strict;
 use warnings;
-use Test::More tests => 15;
+use Test::More tests => 17;
 use WWW::MobileCarrierJP::EZWeb::Model;
 
 my $info = WWW::MobileCarrierJP::EZWeb::Model->scrape;
@@ -26,4 +26,8 @@ is scalar( grep { not defined $_ } map { $_->{flash_lite} } @$info ), 53, 'no fl
 my ($w55t, ) = grep { $_->{model_long} eq 'W55T' } @$info;
 is_deeply $w55t->{display_browsing}, {width => 229, height => 245}, 'display size(browsing)';
 is_deeply $w55t->{display_wallpaper}, {width => 240, height => 320}, 'display size(wallpaper)';
+
+my ($s001, ) = grep { $_->{model_long} eq 'S001' } @$info;
+ok $s001;
+is_deeply $s001->{display_wallpaper}, {width => 480, height => 854}, 's001';
 
