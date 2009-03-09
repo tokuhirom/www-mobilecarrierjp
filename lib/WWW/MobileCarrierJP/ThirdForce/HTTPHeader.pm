@@ -29,6 +29,7 @@ sub _asterisk { s/ x /*/ }
 
 sub _undefine {
     my $x = shift;
+    $x =~ s/\s+$//;
     $x =~ /^(?:−|-|\x{d7})$/ ? undef : $x;
 }
 
