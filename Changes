@@ -1,5 +1,9 @@
 Revision history for Perl extension WWW::MobileCarrierJP
 
+0.29
+
+    - ignore deprecated au cidr
+
 0.28
 
     - f*cking j-phone changed html...
