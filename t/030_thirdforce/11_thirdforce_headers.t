@@ -7,6 +7,30 @@ my $rows = WWW::MobileCarrierJP::ThirdForce::HTTPHeader->scrape();
 
 my @cases = (
     {
+        'model'            => '831P',
+        'x-jphone-color'   => 'C262144',
+        'x-jphone-display' => '240*427',
+        'x-jphone-name'    => '831P',
+        'x-jphone-smaf'    => '40/pcm',
+        'x-jphone-sound'   => undef,
+    },
+    {
+        'model'            => '930CA',
+        'x-jphone-color'   => 'C262144',
+        'x-jphone-display' => '480*854',
+        'x-jphone-name'    => '930CA',
+        'x-jphone-smaf'    => '128/pcm',
+        'x-jphone-sound'   => undef,
+    },
+    {
+        'model'            => '830SH for Biz',
+        'x-jphone-color'   => 'C262144',
+        'x-jphone-display' => '240*320',
+        'x-jphone-name'    => '830SHe',
+        'x-jphone-smaf'    => '40/pcm/grf/rs',
+        'x-jphone-sound'   => undef,
+    },
+    {
         'model'            => 'DM001SH',
         'x-jphone-color'   => 'C262144',
         'x-jphone-display' => '240*400',
@@ -36,7 +60,7 @@ my @cases = (
         'x-jphone-display' => '96*84',
         'x-jphone-name'    => 'J-SH02',
         'x-jphone-smaf'    => undef,
-        'x-jphone-sound'   => '3',
+        'x-jphone-sound'   => '3.0',
     }
 );
 
