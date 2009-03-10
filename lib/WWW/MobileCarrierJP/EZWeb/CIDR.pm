@@ -7,12 +7,14 @@ use URI;
 sub url { 'http://www.au.kddi.com/ezfactory/tec/spec/ezsava_ip.html'; }
 
 sub scrape {
-    scraper {
+    my $rows = scraper {
         process '//table[@cellspacing="1"]/tr[@bgcolor="#ffffff"]', 'ip[]', scraper {
             process '//td[position()=2]/div', 'ip',         'TEXT';
             process '//td[position()=3]/div', 'subnetmask', 'TEXT';
+            process '//td[position()=4]/div', 'deprecated', 'TEXT';
         };
     }->scrape(URI->new(__PACKAGE__->url))->{ip};
+    return [ grep { ! $_->{deprecated} } @$rows ];
 }
 
 1;
