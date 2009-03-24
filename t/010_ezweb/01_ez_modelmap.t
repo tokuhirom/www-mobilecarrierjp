@@ -31,3 +31,5 @@ my ($s001, ) = grep { $_->{model_long} eq 'S001' } @$info;
 ok $s001;
 is_deeply $s001->{display_wallpaper}, {width => 480, height => 854}, 's001';
 
+diag "au has @{[ scalar(@$info) ]} phones";
+
