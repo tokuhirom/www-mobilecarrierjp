@@ -31,7 +31,8 @@ sub parse_one {
 
     *{"$pkg\::scrape"} = sub {
         my @res = ();
-        for my $url (@{ $args{urls} }) {
+        my $urls = $args{urls} or die "missing urls";
+        for my $url ( @$urls ) {
             my $result = scraper {
                 process $args{xpath}, 'rows[]', $args{scraper};
             }->scrape( URI->new($url) )->{rows};
