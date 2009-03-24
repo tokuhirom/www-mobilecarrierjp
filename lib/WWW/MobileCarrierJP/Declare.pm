@@ -30,6 +30,8 @@ sub parse_one {
     no strict 'refs';
 
     *{"$pkg\::scrape"} = sub {
+        local $Web::Scraper::UseLibXML = 1;
+
         my @res = ();
         my $urls = $args{urls} or die "missing urls";
         for my $url ( @$urls ) {
