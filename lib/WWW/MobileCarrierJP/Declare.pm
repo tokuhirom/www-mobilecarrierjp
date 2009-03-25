@@ -5,8 +5,14 @@ use utf8;
 use base qw/Exporter/;
 use Web::Scraper;
 use URI;
+BEGIN {
+    eval q{
+        use HTML::TreeBuilder::LibXML;
+        HTML::TreeBuilder::LibXML->replace_original();
+    };
+}
 
-our @EXPORT = qw(parse_one scraper process col as_tree);
+our @EXPORT = qw(parse_one scraper process col as_tree result);
 
 sub import {
     my $class = shift;
@@ -30,8 +36,6 @@ sub parse_one {
     no strict 'refs';
 
     *{"$pkg\::scrape"} = sub {
-        local $Web::Scraper::UseLibXML = 1;
-
         my @res = ();
         my $urls = $args{urls} or die "missing urls";
         for my $url ( @$urls ) {

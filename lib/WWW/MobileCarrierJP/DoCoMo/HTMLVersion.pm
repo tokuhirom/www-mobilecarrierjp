@@ -3,6 +3,7 @@ use strict;
 use warnings;
 use charnames ':full';
 use WWW::MobileCarrierJP::Declare;
+use HTML::TableExtract;
 
 parse_one(
     urls => ["http://www.nttdocomo.co.jp/service/imode/make/content/spec/useragent/"],
@@ -11,22 +12,24 @@ parse_one(
         process 'h2.title', 'version',
             [ 'TEXT', sub { s/^.*(\d\.\d).*$/$1/ } ];
 
-        process '//td[@class!="acenter middle" and @class!="brownLight acenter middle" and 0=count(preceding-sibling::td[@class!="acenter middle"])]',
-            'models[]',
-            [
-            sub {
-                # retrieve first text element in <td>
-                $_ = $_->content->[0]; # get span
-                $_ = $_->content->[0]; # get text
-                $_;
-            },
-            sub {
+        my $tree = $_->clone;
+        $_->delete for $tree->findnodes('//td[contains(@class, "brownLight")]');
+        $_->delete for $tree->findnodes('//a');
+        my @models;
+        for my $table ($tree->findnodes('//table')) {
+            my $te = HTML::TableExtract->new();
+            $te->parse($table->as_HTML);
+            for my $row ($te->rows) {
+                local $_ = $row->[1] || $row->[0];
                 s/\x{a0}.*$//; # cut after space
+                s/\n//g;
                 s/\N{FULLWIDTH LEFT PARENTHESIS}.*//;
                 s/\N{GREEK SMALL LETTER MU}/myu/;
-                $_;
+                push @models, $_;
             }
-        ];
+        }
+
+        return +{ models => \@models, version => result->{version} };
     },
 );
 
