@@ -1,5 +1,11 @@
 Revision history for Perl extension WWW::MobileCarrierJP
 
+0.30
+
+    - release 0.30!too many f*cking changes provided by carriers!
+    - use HTML::TreeBuilder::LibXML, if it is available!
+      This is very fast!
+
 0.29
 
     - ignore deprecated au cidr
