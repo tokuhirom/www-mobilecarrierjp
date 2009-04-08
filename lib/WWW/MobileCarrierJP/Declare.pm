@@ -8,7 +8,8 @@ use URI;
 BEGIN {
     eval q{
         use HTML::TreeBuilder::LibXML;
-        HTML::TreeBuilder::LibXML->replace_original();
+        HTML::TreeBuilder::LibXML->replace_original(); # should be void context
+        1;
     };
 }
 
