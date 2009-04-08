@@ -1,5 +1,9 @@
 Revision history for Perl extension WWW::MobileCarrierJP
 
+0.31
+
+    - HTML::TreeBuilder::LibXML requires void context
+
 0.30
 
     - release 0.30!too many f*cking changes provided by carriers!
