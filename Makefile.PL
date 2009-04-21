@@ -5,6 +5,7 @@ all_from 'lib/WWW/MobileCarrierJP.pm';
 requires 'Web::Scraper'  => '0.24';
 requires 'Exporter' => '0.60';
 requires 'HTML::Selector::XPath' => '0.03';
+requires 'HTML::TableExtract';
 
 features(
     'ezweb pictgram scraper' => [
@@ -12,6 +13,8 @@ features(
         recommends('CAM::PDF', 0),
     ],
 );
+
+auto_set_repository;
 
 tests 't/*.t t/*/*.t t/*/*/*.t t/*/*/*/*.t';
 build_requires 'Test::More';
