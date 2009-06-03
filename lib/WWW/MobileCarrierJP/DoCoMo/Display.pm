@@ -63,6 +63,16 @@ WWW::MobileCarrierJP::DoCoMo::Display - get display informtation from DoCoMo sit
     use WWW::MobileCarrierJP::DoCoMo::Display;
     WWW::MobileCarrierJP::DoCoMo::Display->scrape();
 
+=head1 DESCRIPTION
+
+iブラウザ2.0 から仕様がいちじるしく変更されているので注意。
+現在、このあたりの処理が未実装です。
+
+おそらく、i-browser 2.0 の用のものを別個にわける形になるかとおもいます。
+WWW::MobileCarrierJP::DoCoMo::Display::iBrowser20 的な。
+
+L<http://www.nttdocomo.co.jp/service/imode/make/content/browser/browser2/new_function/index.html>
+
 =head1 AUTHOR
 
 Tokuhiro Matsuno < tokuhirom gmail com >
