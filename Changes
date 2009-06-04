@@ -1,5 +1,9 @@
 Revision history for Perl extension WWW::MobileCarrierJP
 
+0.33
+
+    - DoCoMo::HTMLVersion: support i-mode browser 2.0
+
 0.32
 
     - fixed deps

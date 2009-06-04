@@ -60,3 +60,4 @@ tools/check_http_mobileagent_flash_map.pl
 tools/dump.pl
 tools/smoke-test.sh
 tools/www-mobilecarrierjp-dump_all.pl
+PLEASE_README_FIRST
