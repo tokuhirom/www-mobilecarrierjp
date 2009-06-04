@@ -1,16 +1,15 @@
 package WWW::MobileCarrierJP::DoCoMo::HTMLVersion;
-use strict;
-use warnings;
-use charnames ':full';
 use WWW::MobileCarrierJP::Declare;
 use HTML::TableExtract;
+use charnames ':full';
 
 parse_one(
     urls => ["http://www.nttdocomo.co.jp/service/imode/make/content/spec/useragent/"],
     xpath => '//div[@class="titlept01"]/../../div[@class="section"]',
     scraper => scraper {
         process 'h2.title', 'version',
-            [ 'TEXT', sub { s/^.*(\d\.\d).*$/$1/ } ];
+            [ 'TEXT', sub { s/^iモード対応HTML(\d\.\d).*$/$1/ } ];
+        return if result->{version} !~ /^[0-9.]+$/;
 
         my $tree = $_->clone;
         $_->delete for $tree->findnodes('//td[contains(@class, "brownLight")]');
@@ -44,6 +43,12 @@ WWW::MobileCarrierJP::DoCoMo::HTMLVersion - get HTMLVersion informtation from Do
 
     use WWW::MobileCarrierJP::DoCoMo::HTMLVersion;
     WWW::MobileCarrierJP::DoCoMo::HTMLVersion->scrape();
+
+=head1 NOTE
+
+iモードブラウザ2.0 以後、HTML Version という概念がなくなった(ようにみえる)ので、注意が必要です。このモジュールでは、i-modeブラウザ2.0な端末かどうかという情報は出力していません。
+
+cache size が 500kb 以上のものかどうかをみて、i-mode browser 2.0 対応端末かどうかを判断してください。
 
 =head1 AUTHOR
 

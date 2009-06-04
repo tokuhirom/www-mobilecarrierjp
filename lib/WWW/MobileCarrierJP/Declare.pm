@@ -43,8 +43,9 @@ sub parse_one {
             my $result = scraper {
                 process $args{xpath}, 'rows[]', $args{scraper};
             }->scrape( URI->new($url) )->{rows};
+            my @result = grep { $_ } @$result;
 
-            push @res, @$result;
+            push @res, @result;
         }
         return \@res;
     };
