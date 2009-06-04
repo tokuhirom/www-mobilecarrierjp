@@ -1,6 +1,6 @@
 use strict;
 use warnings;
-use Test::More tests => 18;
+use Test::More tests => 28;
 use WWW::MobileCarrierJP::DoCoMo::HTMLVersion;
 
 my $vermap = WWW::MobileCarrierJP::DoCoMo::HTMLVersion->scrape;
@@ -11,6 +11,14 @@ cmp_ok scalar(grep !/[a-zA-Z0-9]+/, map { @{$_->{models}} } @$vermap), '==', 0;
 
 for my $version (qw/1.0 2.0 3.0 4.0 5.0 6.0 7.0 7.1 7.2/) {
     ok scalar(grep { $_->{version} eq $version } @$vermap), "$version exists in the data.";
+}
+
+{
+    my $prev = -1;
+    for my $v (@$vermap) {
+        cmp_ok $v->{version}, '>', $prev;
+        $prev = $v->{version};
+    }
 }
 
 do {
