@@ -13,7 +13,13 @@ BEGIN {
     };
 }
 
-our @EXPORT = qw(parse_one scraper process col as_tree result);
+our @EXPORT = qw(parse_one scraper process col as_tree result p);
+
+sub p {
+    require Data::Dumper;
+    print STDERR Data::Dumper::Dumper(@_);
+}
+
 
 sub import {
     my $class = shift;
