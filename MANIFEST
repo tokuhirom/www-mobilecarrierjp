@@ -61,3 +61,5 @@ tools/dump.pl
 tools/smoke-test.sh
 tools/www-mobilecarrierjp-dump_all.pl
 PLEASE_README_FIRST
+lib/WWW/MobileCarrierJP/DoCoMo/UserAgent.pm
+t/020_docomo/13_docomo_useragent.t

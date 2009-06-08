@@ -2,7 +2,7 @@ package WWW::MobileCarrierJP;
 use strict;
 use warnings;
 
-our $VERSION = '0.33';
+our $VERSION = '0.34';
 
 1;
 
@@ -48,6 +48,7 @@ Tokuhiro Matsuno <tokuhirom gmail com>
 
 nobjas
 kazeburo
+takefumi
 
 =head1 COPYRIGHT
 
