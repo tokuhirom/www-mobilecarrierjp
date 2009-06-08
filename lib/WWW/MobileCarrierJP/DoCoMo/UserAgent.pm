@@ -32,6 +32,7 @@ sub scrape {
                 $_ =  $_->as_text;
                 s/\N{GREEK SMALL LETTER MU}/MYU/;
                 s/\s?（.+//;
+                s/\s//g;
                 uc $_;
             };
 
