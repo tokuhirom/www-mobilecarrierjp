@@ -1,6 +1,6 @@
 use strict;
 use warnings;
-use Test::More tests => 10;
+use Test::More tests => 12;
 use WWW::MobileCarrierJP::DoCoMo::UserAgent;
 
 my $dat = WWW::MobileCarrierJP::DoCoMo::UserAgent->scrape;
@@ -15,8 +15,11 @@ is join(',', sort(keys %{$dat->[0]})), 'model,user_agent';
     is $m->{user_agent}, 'DoCoMo/2.0 F09A3(c500;TB;W24H16)';
 }
 
-ok grep { $_->{model} eq 'P704Imyu' } @$dat;
-is scalar(grep { $_->{model} =~ /&mu;/i } @$dat), 0;
+ok grep({ $_->{model} eq 'P704IMYU' } @$dat), 'check myu';
+is scalar(grep { $_->{model} =~ /&mu;/i } @$dat), 0, 'ditto';
+
+is scalar(grep { $_->{model} } @$dat), scalar(@$dat);
+is scalar(grep { $_->{user_agent} } @$dat), scalar(@$dat);
 
 # iモード対応HTML2.0（mova 502iなど）は、表示が変なので、注意ぶかくチェックする
 ok grep { $_->{user_agent} eq 'DoCoMo/1.0/P651ps' } @$dat;

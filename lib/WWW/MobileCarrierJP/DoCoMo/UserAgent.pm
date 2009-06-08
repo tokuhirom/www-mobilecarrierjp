@@ -1,57 +1,65 @@
 package WWW::MobileCarrierJP::DoCoMo::UserAgent;
 use WWW::MobileCarrierJP::Declare;
+use HTML::Selector::XPath 'selector_to_xpath';
+use charnames ':full';
 
 my $URL = 'http://www.nttdocomo.co.jp/service/imode/make/content/spec/useragent/index.html';
 
+# 不要なカラム
+my @TRASH_XPATHS = (
+    '//td[@rowspan]',                     # シリーズ名とか
+    '//td[@class="acenter middle"]',      # シリーズ名
+    selector_to_xpath('.brownLight'),     # ヘッダ
+);
+
 sub scrape {
-    my $data = get($URL);
+    my $result = scraper {
+        process '//tr', 'rows[]', scraper {
+            my $tree = as_tree($_);
 
-    my @ua;
-    for my $tr ($data =~ m{(<tr.+?>.+?</tr>)}sg) {
-
-        # XXX: class="acenter middle" が入っているのはシリーズ名。
-        # 作業のしやすさのため削除
-        $tr =~ s[<td.+?rowspan=.+?/td>][];
-        $tr =~ s[<td class="acenter middle">.+?</td>][];
-
-        # XXX: class="brownLight  が入っているのはヘッダ。
-        # 作業のしやすさのため削除
-        $tr =~ s[<td.+?class="brownLight.+?/td>][];
-        $tr =~ s[<td scope="col" class="brownLight acenter middle">.+?</td>][]g;
-
-        my @cols = ($tr =~ m{(<td.+?/td>)}sg);
-        next if (scalar @cols <= 1);
-
-        debug (scalar @cols);
-        debug ("------------------------------------");
-        debug ($tr);
-        debug ("------------------------------------");
-        for my $col (@cols) {
-
-            # XXX: DoCoMo の文字列があるときは User Agent っぽい。
-            if ($col =~ m[DoCoMo] ) {
-                $col = (
-                    grep {/DoCoMo/}
-                    split m[&nbsp;|<br>], $col
-                )[0]; # XXX: 複数あるときは一番最初ののがブラウザ
+            # 不要なカラムを削除しておく
+            for my $xpath (@TRASH_XPATHS) {
+                for my $node ($tree->findnodes($xpath)) {
+                    $node->delete;
+                }
             }
 
-            $col = (split /&nbsp;|<br>/, $col)[0];
-            $col =~ s/<.+?>//g;
-            $col =~ s/\n|\r//g;
-            debug ("-      $col");
-        }
-        debug ("------------------------------------");
+            my @cols = $tree->findnodes('//td');
+            return if (scalar @cols <= 1);
 
-        my $model = uc $cols[0];
-        my $user_agent = $cols[1] || $cols[2];
+            my $model = do {
+                local $_ = shift @cols;
+                $_ =  $_->as_text;
+                s/\N{GREEK SMALL LETTER MU}/MYU/;
+                uc $_;
+            };
 
-        $model =~ s/&MU;/myu/;
+            my $ua = sub {
+                for my $col (@cols) {
+                    $col = $col->as_text;
+                    next unless $col =~ /DoCoMo/;
 
-        push @ua, {model => $model, user_agent => $user_agent};
-    }
+                    $col = (
+                        grep {/DoCoMo/}
+                        split m[\n], $col
+                    )[0]; # XXX: 複数あるときは一番最初ののがブラウザ
+                    $col =~ s/ （.+//;
+                    return $col;
+                }
+            }->();
+            debug ("$model - $ua");
+            debug ("------------------------------------");
 
-    return \@ua
+            $tree = $tree->delete;
+
+            result qw/model user_agent/;
+            return {model => $model, user_agent => $ua};
+        };
+    }->scrape( URI->new($URL) )->{rows};
+
+    @$result = grep { %$_ } @$result; # remove empty rows
+
+    return $result;
 }
 
 1;
