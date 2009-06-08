@@ -31,18 +31,22 @@ sub scrape {
                 local $_ = shift @cols;
                 $_ =  $_->as_text;
                 s/\N{GREEK SMALL LETTER MU}/MYU/;
+                s/\s?（.+//;
                 uc $_;
             };
 
             my $ua = sub {
                 for my $col (@cols) {
-                    $col = $col->as_text;
+                    $col = $col->as_HTML;
                     next unless $col =~ /DoCoMo/;
 
                     $col = (
                         grep {/DoCoMo/}
-                        split m[\n], $col
-                    )[0]; # XXX: 複数あるときは一番最初ののがブラウザ
+                        split m[(?:&nbsp;|<br\s*/>|\r|\n)]i, $col
+                    )[0]; # XXX: 複数あるときは一番最初のがブラウザ
+                    $col =~ s/^\s*//;
+                    $col =~ s/\s*$//;
+                    $col =~ s/<[^><]+>//g; # remove tags
                     $col =~ s/ （.+//;
                     return $col;
                 }
