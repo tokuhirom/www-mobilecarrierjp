@@ -51,7 +51,7 @@ sub scrape {
         my $model = uc $cols[0];
         my $user_agent = $cols[1] || $cols[2];
 
-        $model =~ s/&MU;/MYU/;
+        $model =~ s/&MU;/myu/;
 
         push @ua, {model => $model, user_agent => $user_agent};
     }
@@ -77,6 +77,8 @@ WWW::MobileCarrierJP::DoCoMo::UserAgent - get user agent informtation from DoCoM
     WWW::MobileCarrierJP::DoCoMo::UserAgent->scrape();
 
 =head1 AUTHOR
+
+Takefumi Kimura
 
 Tokuhiro Matsuno < tokuhirom gmail com >
 
