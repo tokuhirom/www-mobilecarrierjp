@@ -1,6 +1,6 @@
 use strict;
 use warnings;
-use Test::More tests => 12;
+use Test::More tests => 13;
 use WWW::MobileCarrierJP::DoCoMo::UserAgent;
 
 my $dat = WWW::MobileCarrierJP::DoCoMo::UserAgent->scrape;
@@ -20,6 +20,7 @@ is scalar(grep { $_->{model} =~ /&mu;/i } @$dat), 0, 'ditto';
 
 is scalar(grep { $_->{model} } @$dat), scalar(@$dat);
 is scalar(grep { $_->{user_agent} } @$dat), scalar(@$dat);
+is_deeply [grep /\p{KATAKANA}/, map { $_->{user_agent} } @$dat], [];
 
 # iモード対応HTML2.0（mova 502iなど）は、表示が変なので、注意ぶかくチェックする
 ok grep { $_->{user_agent} eq 'DoCoMo/1.0/P651ps' } @$dat;
