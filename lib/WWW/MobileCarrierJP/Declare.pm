@@ -9,7 +9,7 @@ use LWP::UserAgent;
 use Carp ();
 BEGIN {
     eval q{
-        use HTML::TreeBuilder::LibXML;
+        use HTML::TreeBuilder::LibXML 0.04;
         HTML::TreeBuilder::LibXML->replace_original(); # should be void context
         1;
     };
