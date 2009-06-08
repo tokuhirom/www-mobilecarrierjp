@@ -5,6 +5,8 @@ use utf8;
 use base qw/Exporter/;
 use Web::Scraper;
 use URI;
+use LWP::UserAgent;
+use Carp ();
 BEGIN {
     eval q{
         use HTML::TreeBuilder::LibXML;
@@ -13,13 +15,27 @@ BEGIN {
     };
 }
 
-our @EXPORT = qw(parse_one scraper process col as_tree result p);
+our @EXPORT = qw(parse_one scraper process col as_tree result p debug get);
 
 sub p {
     require Data::Dumper;
     print STDERR Data::Dumper::Dumper(@_);
 }
 
+sub debug {
+    print "$_[0]\n" if $ENV{WMCJP_DEBUG};
+}
+
+sub get {
+    my $url = shift;
+    my $ua = LWP::UserAgent->new(agent => __PACKAGE__);
+    my $res = $ua->get($url);
+    if ($res->is_success) {
+        return $res->content;
+    } else {
+        Carp::croak($res->status_line);
+    }
+}
 
 sub import {
     my $class = shift;

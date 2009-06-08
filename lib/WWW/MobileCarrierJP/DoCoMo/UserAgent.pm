@@ -1,15 +1,10 @@
 package WWW::MobileCarrierJP::DoCoMo::UserAgent;
-
-use strict;
-use LWP::Simple qw();
-
-my $DEBUG = 0;
+use WWW::MobileCarrierJP::Declare;
 
 my $URL = 'http://www.nttdocomo.co.jp/service/imode/make/content/spec/useragent/index.html';
 
 sub scrape {
-
-    my $data = LWP::Simple::get($URL);
+    my $data = get($URL);
 
     my @ua;
     for my $tr ($data =~ m{(<tr.+?>.+?</tr>)}sg) {
@@ -59,11 +54,6 @@ sub scrape {
     return \@ua
 }
 
-sub debug {
-    my $msg = shift;
-    print "$msg\n" if $DEBUG;
-}
- 
 1;
 __END__
 
