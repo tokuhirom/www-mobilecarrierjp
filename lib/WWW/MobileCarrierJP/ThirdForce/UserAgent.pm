@@ -6,7 +6,7 @@ parse_one(
     xpath => q(//tr[@bgcolor="#FFFFFF"]/td[@rowspan="5"]/..),
     scraper => scraper {
         col 1 => 'model'      => 'TEXT';
-        col 2 => 'user_agent' => 'TEXT';
+        col 2 => 'user_agent' => ['TEXT', sub { s/\s+$//; }];
     },
 );
 

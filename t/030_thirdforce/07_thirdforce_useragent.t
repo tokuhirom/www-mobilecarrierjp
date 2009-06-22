@@ -1,6 +1,6 @@
 use strict;
 use warnings;
-use Test::More tests => 6;
+use Test::More tests => 7;
 use WWW::MobileCarrierJP::ThirdForce::UserAgent;
 
 my $dat = WWW::MobileCarrierJP::ThirdForce::UserAgent->scrape;
@@ -15,4 +15,5 @@ cmp_ok scalar(@$dat), '>', 30;
 
 ok grep { $_->{model} eq '821P' } @$dat;
 is scalar(grep { $_->{model} =~ /series/ } @$dat), 0;
+is scalar(grep { $_->{user_agent} =~ /\s$/ } @$dat), 0, 'i hate trailing spaces';
 
