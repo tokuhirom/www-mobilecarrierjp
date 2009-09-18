@@ -8,7 +8,8 @@ sub url { 'http://www.nttdocomo.co.jp/service/imode/make/content/ip/'; }
 
 sub scrape {
     scraper {
-        process '//div[@class="boxArea" and count(preceding-sibling::*)=2]/div/div[@class="section"]/ul[@class="normal txt"]/li',
+        process
+            '//div[@class="boxArea" and count(preceding-sibling::*)=2]/div/div[@class="section"]/ul[@class="normal txt" and preceding-sibling::div[1][@class="titlept03"]]/li',
                 'cidr[]', [
                     'TEXT', sub {
                         m{^([0-9.]+)(/[0-9]+)};
