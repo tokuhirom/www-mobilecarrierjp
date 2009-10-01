@@ -6,7 +6,7 @@ use charnames ':full';
 my $URL = 'http://www.nttdocomo.co.jp/service/imode/make/content/spec/useragent/index.html';
 
 # 不要なカラム
-my @TRASH_XPATHS = (
+our @TRASH_XPATHS = (
     '//td[@rowspan]',                     # シリーズ名とか
     '//td[@class="acenter middle"]',      # シリーズ名
     selector_to_xpath('.brownLight'),     # ヘッダ
@@ -49,6 +49,7 @@ sub scrape {
                     $col =~ s/\s*$//;
                     $col =~ s/<[^><]+>//g; # remove tags
                     $col =~ s/ （.+//;
+                    $col =~ s/(&#xA0.*)$//;
                     return $col;
                 }
             }->();
