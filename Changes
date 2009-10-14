@@ -1,5 +1,10 @@
 Revision history for Perl extension WWW::MobileCarrierJP
 
+0.37
+
+    - Fixed uninitialized value and unnecessary data for docomo useragent
+      (zigorou++)
+
 0.36
 
     - ignore no i-mode browser(chiba)
