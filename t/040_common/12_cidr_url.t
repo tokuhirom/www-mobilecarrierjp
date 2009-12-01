@@ -1,6 +1,8 @@
 use strict;
 use warnings;
-use Test::More tests => 4*1;
+use Test::More;
+use LWP::Online ":skip_all";
+plan tests => 4*1;
 
 my @carrier = qw/EZWeb DoCoMo AirHPhone ThirdForce/;
 for my $carrier (@carrier) {

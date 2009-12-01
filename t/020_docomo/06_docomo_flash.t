@@ -1,6 +1,9 @@
 use strict;
 use warnings;
-use Test::More tests => 16;
+use Test::More;
+use LWP::Online ":skip_all";
+plan tests => 16;
+use LWP::Online ':skip_all';
 use WWW::MobileCarrierJP::DoCoMo::Flash;
 
 my $dat = WWW::MobileCarrierJP::DoCoMo::Flash->scrape;

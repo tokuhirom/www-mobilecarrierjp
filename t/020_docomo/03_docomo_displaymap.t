@@ -1,7 +1,10 @@
 use strict;
 use warnings;
-use Test::More tests => 6;
+use Test::More;
+use LWP::Online ":skip_all";
+plan tests => 6;
 use WWW::MobileCarrierJP::DoCoMo::Display;
+use LWP::Online ':skip_all';
 
 my $dat = WWW::MobileCarrierJP::DoCoMo::Display->scrape;
 ok scalar(@$dat) > 30;

@@ -1,6 +1,8 @@
 use strict;
 use warnings;
-use Test::More tests => 7;
+use Test::More;
+use LWP::Online ":skip_all";
+plan tests => 7;
 use WWW::MobileCarrierJP::ThirdForce::UserAgent;
 
 my $dat = WWW::MobileCarrierJP::ThirdForce::UserAgent->scrape;

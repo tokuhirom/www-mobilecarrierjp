@@ -1,5 +1,7 @@
 use t::Utils;
-use Test::More tests => 4 + 4*4 + 5;
+use Test::More;
+use LWP::Online ":skip_all";
+plan tests => 4 + 4*4 + 5;
 
 my %dat = ();
 for my $class (modules('CIDR')) {

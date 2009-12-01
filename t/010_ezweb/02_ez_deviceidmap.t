@@ -1,8 +1,11 @@
 use strict;
 use warnings;
 use utf8;
-use Test::More tests => 10;
+use Test::More;
 use WWW::MobileCarrierJP::EZWeb::DeviceID;
+use LWP::Online ':skip_all';
+
+plan tests => 10;
 
 my $dat = WWW::MobileCarrierJP::EZWeb::DeviceID->scrape;
 ok scalar(@$dat) > 30;

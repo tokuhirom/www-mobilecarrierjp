@@ -1,6 +1,8 @@
 use strict;
 use warnings;
-use Test::More tests => 27;
+use Test::More;
+use LWP::Online ":skip_all";
+plan tests => 27;
 use WWW::MobileCarrierJP::DoCoMo::HTMLVersion;
 
 my $vermap = WWW::MobileCarrierJP::DoCoMo::HTMLVersion->scrape;

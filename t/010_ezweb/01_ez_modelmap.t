@@ -1,7 +1,9 @@
 use strict;
 use warnings;
-use Test::More tests => 17;
+use Test::More;
 use WWW::MobileCarrierJP::EZWeb::Model;
+use LWP::Online ':skip_all';
+plan tests => 17;
 
 my $info = WWW::MobileCarrierJP::EZWeb::Model->scrape;
 is ref($info), 'ARRAY';
