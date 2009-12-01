@@ -7,6 +7,7 @@ requires 'Exporter' => '0.60';
 requires 'HTML::Selector::XPath' => '0.03';
 requires 'HTML::TableExtract';
 requires 'LWP::UserAgent' => '5.834';
+requires 'URI';
 
 features(
     'ezweb pictgram scraper' => [
