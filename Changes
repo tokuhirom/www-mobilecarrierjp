@@ -1,5 +1,9 @@
 Revision history for Perl extension WWW::MobileCarrierJP
 
+0.38
+
+    - fixed bugs around invalid html.
+
 0.37
 
     - Fixed uninitialized value and unnecessary data for docomo useragent

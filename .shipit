@@ -1,1 +1,2 @@
 steps = FindVersion, ChangeVersion, CheckChangeLog, DistTest, Commit, MakeDist, UploadCPAN
+git.push_to=origin
