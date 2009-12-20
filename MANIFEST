@@ -1,5 +1,6 @@
 .shipit
 Changes
+inc/LWP/Online.pm
 inc/Module/Install.pm
 inc/Module/Install/Base.pm
 inc/Module/Install/Can.pm
@@ -26,6 +27,7 @@ lib/WWW/MobileCarrierJP/DoCoMo/Display.pm
 lib/WWW/MobileCarrierJP/DoCoMo/Flash.pm
 lib/WWW/MobileCarrierJP/DoCoMo/HTMLVersion.pm
 lib/WWW/MobileCarrierJP/DoCoMo/PictogramInfo.pm
+lib/WWW/MobileCarrierJP/DoCoMo/UserAgent.pm
 lib/WWW/MobileCarrierJP/EZWeb/BREW.pm
 lib/WWW/MobileCarrierJP/EZWeb/CIDR.pm
 lib/WWW/MobileCarrierJP/EZWeb/DeviceID.pm
@@ -40,6 +42,7 @@ LICENSE
 Makefile.PL
 MANIFEST			This list of files
 META.yml
+PLEASE_README_FIRST
 README
 t/00_compile.t
 t/010_ezweb/01_ez_modelmap.t
@@ -48,6 +51,7 @@ t/010_ezweb/09_ezweb_brew.t
 t/020_docomo/03_docomo_displaymap.t
 t/020_docomo/06_docomo_flash.t
 t/020_docomo/08_docomo_htmlversion.t
+t/020_docomo/13_docomo_useragent.t
 t/030_thirdforce/07_thirdforce_useragent.t
 t/030_thirdforce/10_thirdforce_service.t
 t/030_thirdforce/11_thirdforce_headers.t
@@ -60,6 +64,3 @@ tools/check_http_mobileagent_flash_map.pl
 tools/dump.pl
 tools/smoke-test.sh
 tools/www-mobilecarrierjp-dump_all.pl
-PLEASE_README_FIRST
-lib/WWW/MobileCarrierJP/DoCoMo/UserAgent.pm
-t/020_docomo/13_docomo_useragent.t
