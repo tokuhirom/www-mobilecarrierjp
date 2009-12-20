@@ -4,11 +4,16 @@ use YAML;
 use FindBin;
 use File::Spec;
 use lib File::Spec->catfile($FindBin::Bin, '..', 'lib');
-use Module::Pluggable::Fast name => 'components', search => ['WWW::MobileCarrierJP'], require => 'yes';
+use Module::Pluggable::Object;
+
+my $pluggable = Module::Pluggable::Object->new(
+    'require' => 'yes',
+    'search_path' => ['WWW::MobileCarrierJP'],
+);
 
 my $datdir = File::Spec->catfile($FindBin::Bin, '..', 'dat');
 mkdir $datdir;
-for my $module (components()) {
+for my $module ($pluggable->plugins()) {
     next if $module eq 'WWW::MobileCarrierJP::Declare';
 
     my $fname = $module;
