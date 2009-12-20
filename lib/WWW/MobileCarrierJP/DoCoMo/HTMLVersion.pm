@@ -6,6 +6,12 @@ use charnames ':full';
 parse_one(
     urls => ["http://www.nttdocomo.co.jp/service/imode/make/content/spec/useragent/"],
     xpath => '//div[@class="titlept01"]/../../div[@class="section"]',
+    content_filter => sub {
+        local $_ = shift;
+        # hmmm. libxml is strange.
+        s{<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">}{};
+        $_;
+    },
     scraper => scraper {
         process 'h2.title', 'version',
             [ 'TEXT', sub { s/^iモード対応HTML(\d\.\d).*$/$1/ } ];

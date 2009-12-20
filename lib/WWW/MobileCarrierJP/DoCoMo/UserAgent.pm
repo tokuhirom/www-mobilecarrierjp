@@ -13,6 +13,8 @@ our @TRASH_XPATHS = (
 );
 
 sub scrape {
+    my $content = get($URL);
+    $content =~ s{<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">}{};
     my $result = scraper {
         process '//tr', 'rows[]', scraper {
             my $tree = as_tree($_);
@@ -61,7 +63,7 @@ sub scrape {
             result qw/model user_agent/;
             return {model => $model, user_agent => $ua};
         };
-    }->scrape( URI->new($URL) )->{rows};
+    }->scrape( $content )->{rows};
 
     @$result = grep { %$_ } @$result; # remove empty rows
 
