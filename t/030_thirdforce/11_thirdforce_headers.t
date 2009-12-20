@@ -60,7 +60,7 @@ my @cases = (
         'x-jphone-display' => '96*84',
         'x-jphone-name'    => 'J-SH02',
         'x-jphone-smaf'    => undef,
-        'x-jphone-sound'   => '3.0',
+        'x-jphone-sound'   => '3',
     }
 );
 
