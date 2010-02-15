@@ -28,11 +28,12 @@ sub debug {
 }
 
 sub get {
+    require HTTP::Response::Encoding;
     my $url = shift;
     my $ua = LWP::UserAgent->new(agent => __PACKAGE__);
     my $res = $ua->get($url);
     if ($res->is_success) {
-        return decode($res->content_charset, $res->content);
+        return decode($res->charset, $res->content);
     } else {
         Carp::croak($res->status_line);
     }
