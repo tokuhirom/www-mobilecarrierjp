@@ -26,6 +26,7 @@ lib/WWW/MobileCarrierJP/DoCoMo/CIDR.pm
 lib/WWW/MobileCarrierJP/DoCoMo/Display.pm
 lib/WWW/MobileCarrierJP/DoCoMo/Flash.pm
 lib/WWW/MobileCarrierJP/DoCoMo/HTMLVersion.pm
+lib/WWW/MobileCarrierJP/DoCoMo/Java.pm
 lib/WWW/MobileCarrierJP/DoCoMo/PictogramInfo.pm
 lib/WWW/MobileCarrierJP/DoCoMo/UserAgent.pm
 lib/WWW/MobileCarrierJP/EZWeb/BREW.pm
@@ -35,6 +36,7 @@ lib/WWW/MobileCarrierJP/EZWeb/Model.pm
 lib/WWW/MobileCarrierJP/EZWeb/PictogramInfo.pm
 lib/WWW/MobileCarrierJP/ThirdForce/CIDR.pm
 lib/WWW/MobileCarrierJP/ThirdForce/HTTPHeader.pm
+lib/WWW/MobileCarrierJP/ThirdForce/Java.pm
 lib/WWW/MobileCarrierJP/ThirdForce/PictogramInfo.pm
 lib/WWW/MobileCarrierJP/ThirdForce/Service.pm
 lib/WWW/MobileCarrierJP/ThirdForce/UserAgent.pm
@@ -52,9 +54,11 @@ t/020_docomo/03_docomo_displaymap.t
 t/020_docomo/06_docomo_flash.t
 t/020_docomo/08_docomo_htmlversion.t
 t/020_docomo/13_docomo_useragent.t
+t/020_docomo/14_docomo_java.t
 t/030_thirdforce/07_thirdforce_useragent.t
 t/030_thirdforce/10_thirdforce_service.t
 t/030_thirdforce/11_thirdforce_headers.t
+t/030_thirdforce/15_thirdforce_java.t
 t/040_common/04_cidr.t
 t/040_common/05_pictogram.t
 t/040_common/12_cidr_url.t
