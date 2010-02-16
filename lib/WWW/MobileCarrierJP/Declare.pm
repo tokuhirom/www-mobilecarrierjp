@@ -32,7 +32,7 @@ sub get {
     my $ua = LWP::UserAgent->new(agent => __PACKAGE__);
     my $res = $ua->get($url);
     if ($res->is_success) {
-        return $res->decoded_content;
+        return decode($res->content_charset, $res->content);
     } else {
         Carp::croak($res->status_line);
     }
