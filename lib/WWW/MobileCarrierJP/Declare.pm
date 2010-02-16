@@ -5,7 +5,7 @@ use utf8;
 use base qw/Exporter/;
 use Web::Scraper;
 use URI;
-use LWP::UserAgent;
+use LWP::UserAgent 5.827;
 use Carp ();
 use Encode qw/decode/;
 BEGIN {
@@ -28,12 +28,11 @@ sub debug {
 }
 
 sub get {
-    require HTTP::Response::Encoding;
     my $url = shift;
     my $ua = LWP::UserAgent->new(agent => __PACKAGE__);
     my $res = $ua->get($url);
     if ($res->is_success) {
-        return decode($res->charset, $res->content);
+        return $res->decoded_content;
     } else {
         Carp::croak($res->status_line);
     }
