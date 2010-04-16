@@ -8,15 +8,14 @@ my $url = 'http://creation.mb.softbank.jp/terminal/?lup=y&cat=http';
 
 parse_one(
     urls  => [$url],
-    xpath => '//div/table/tr/td/table[@bordercolor="#999999"]/tr[not(@bgcolor="#ee9abb") and not(@bgcolor="#cccccc") and count(child::td) = 8]',
+    xpath => '//div/table/tr/td/table[@bordercolor="#999999"]/tr[not(@bgcolor="#ee9abb") and not(@bgcolor="#cccccc") and count(child::td) = 7]',
     scraper => scraper {
         process 'td:nth-child(1)', 'model', 'TEXT';
 
         process 'td:nth-child(2)', 'x-jphone-name',    'TEXT';
         process 'td:nth-child(3)', 'x-jphone-display', [ 'TEXT', \&_asterisk ];
         process 'td:nth-child(4)', 'x-jphone-color',   'TEXT';
-        process 'td:nth-child(5)', 'x-jphone-sound', [ 'TEXT', \&_undefine ];
-        process 'td:nth-child(6)', 'x-jphone-smaf',  [ 'TEXT', \&_undefine ];
+        process 'td:nth-child(5)', 'x-jphone-smaf',  [ 'TEXT', \&_undefine ];
 
         # maybe, no person needs x-s-* information.
         # and, I don't want to maintenance this header related things :P

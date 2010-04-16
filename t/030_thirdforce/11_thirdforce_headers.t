@@ -12,7 +12,6 @@ my @cases = (
         'x-jphone-display' => '240*427',
         'x-jphone-name'    => '831P',
         'x-jphone-smaf'    => '40/pcm',
-        'x-jphone-sound'   => undef,
     },
     {
         'model'            => '930CA',
@@ -20,7 +19,6 @@ my @cases = (
         'x-jphone-display' => '480*854',
         'x-jphone-name'    => '930CA',
         'x-jphone-smaf'    => '128/pcm',
-        'x-jphone-sound'   => undef,
     },
     {
         'model'            => '830SH for Biz',
@@ -28,7 +26,6 @@ my @cases = (
         'x-jphone-display' => '240*320',
         'x-jphone-name'    => '830SHe',
         'x-jphone-smaf'    => '40/pcm/grf/rs',
-        'x-jphone-sound'   => undef,
     },
     {
         'model'            => 'DM001SH',
@@ -36,7 +33,6 @@ my @cases = (
         'x-jphone-display' => '240*400',
         'x-jphone-name'    => 'DM001SH',
         'x-jphone-smaf'    => '40/pcm/grf/rs',
-        'x-jphone-sound'   => undef,
     },
     {
         'model'            => '820SC',
@@ -44,7 +40,6 @@ my @cases = (
         'x-jphone-color'   => 'C262144',
         'x-jphone-display' => '240*320',
         'x-jphone-smaf'    => '64/pcm',
-        'x-jphone-sound'   => undef,
     },
     {
         'model'            => '706SC',
@@ -52,16 +47,7 @@ my @cases = (
         'x-jphone-color'   => 'C262144',
         'x-jphone-display' => '240*320',
         'x-jphone-smaf'    => '64/pcm',
-        'x-jphone-sound'   => undef,
     },
-    {
-        'model'            => 'J-SH02',
-        'x-jphone-color'   => 'C256',
-        'x-jphone-display' => '96*84',
-        'x-jphone-name'    => 'J-SH02',
-        'x-jphone-smaf'    => undef,
-        'x-jphone-sound'   => '3',
-    }
 );
 
 plan tests => 2*@cases;
