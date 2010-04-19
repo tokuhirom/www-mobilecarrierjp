@@ -1,5 +1,10 @@
 Revision history for Perl extension WWW::MobileCarrierJP
 
+0.41
+
+    - fixed some test issue. softbank removed some informations from web page.
+      (noblejasper)
+
 0.40
 
     - DoCoMo::Java: scrape all java info
