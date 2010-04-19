@@ -7,7 +7,7 @@ my %dat = ();
 for my $class (modules('CIDR')) {
     my $dat = $class->scrape;
     is ref($dat), 'ARRAY', "$class : type check";
-    ok scalar(@$dat) >= 7;
+    ok scalar(@$dat) >= 4;
     is scalar(grep /^[0-9\.]+$/, map { $_->{ip} } @$dat), scalar(@$dat);
     is scalar(grep m{^/[0-9]+$}, map { $_->{subnetmask} } @$dat), scalar(@$dat);
     $dat{$class} = $dat;
