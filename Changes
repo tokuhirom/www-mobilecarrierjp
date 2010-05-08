@@ -1,5 +1,10 @@
 Revision history for Perl extension WWW::MobileCarrierJP
 
+0.42
+
+    - workaround for perl5.12's issue.
+      ref http://rt.perl.org/rt3/Public/Bug/Display.html?id=74982
+
 0.41
 
     - fixed some test issue. softbank removed some informations from web page.
