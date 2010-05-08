@@ -28,7 +28,7 @@ parse_one(
                 local $_ = $row->[1] || $row->[0];
                 s/\x{a0}.*$//; # cut after space
                 s/\n//g;
-                s/\N{FULLWIDTH LEFT PARENTHESIS}.*//;
+                s/（.*//;
                 s/\N{GREEK SMALL LETTER MU}/myu/;
                 push @models, $_;
             }
