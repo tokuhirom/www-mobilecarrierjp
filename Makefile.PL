@@ -14,9 +14,13 @@ features(
         -default => 1,
         recommends('CAM::PDF', 0),
     ],
+    'fast parser' => [
+        -default => 0,
+        recommends('HTML::TreeBuilder::LibXML', 0.11),
+    ],
 );
 
-auto_set_repository;
+auto_set_repository();
 
 tests 't/*.t t/*/*.t t/*/*/*.t t/*/*/*/*.t';
 test_requires 'LWP::Online';
