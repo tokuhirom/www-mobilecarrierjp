@@ -1,6 +1,7 @@
 use strict;
 use warnings;
 use Test::Base;
+use LWP::Online ":skip_all";
 use WWW::MobileCarrierJP::DoCoMo::Java;
 
 plan tests => 2 + 2 * blocks;

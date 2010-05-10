@@ -2,6 +2,7 @@ use strict;
 use warnings;
 use utf8;
 use Test::Base;
+use LWP::Online ":skip_all";
 use UNIVERSAL::require;
 
 eval "use CAM::PDF; 1;"; ## no critic.

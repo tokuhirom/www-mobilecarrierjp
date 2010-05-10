@@ -1,6 +1,7 @@
 use strict;
 use warnings;
 use Test::More;
+use LWP::Online ":skip_all";
 use WWW::MobileCarrierJP::ThirdForce::HTTPHeader;
 
 my $rows = WWW::MobileCarrierJP::ThirdForce::HTTPHeader->scrape();

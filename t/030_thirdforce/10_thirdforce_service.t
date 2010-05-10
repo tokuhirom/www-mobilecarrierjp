@@ -1,6 +1,7 @@
 use strict;
 use warnings;
 use Test::Base;
+use LWP::Online ":skip_all";
 use WWW::MobileCarrierJP::ThirdForce::Service;
 
 plan tests => 1 + 2*blocks;
