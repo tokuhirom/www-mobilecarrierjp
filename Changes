@@ -1,5 +1,10 @@
 Revision history for Perl extension WWW::MobileCarrierJP
 
+0.44
+
+    (no feature changes)
+    - added 'use LWP::Online ":skip_all";' for all tests.
+
 0.43
 
     - more better error message for CPAN testers.
