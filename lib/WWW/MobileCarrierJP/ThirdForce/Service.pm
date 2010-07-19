@@ -6,7 +6,7 @@ use charnames ':full';
 use WWW::MobileCarrierJP::Declare;
 
 my $url = 'http://creation.mb.softbank.jp/terminal/?lup=y&cat=service';
-my $xpath = '//div/table/tr/td/table[@bordercolor="#999999"]/tr[not(@bgcolor="#ee9abb") and not(@bgcolor="#cccccc") and count(child::td) = 8]';
+my $xpath = '//div/table/tr/td/table[@bordercolor="#999999"]/tr[not(@bgcolor="#ee9abb") and not(@bgcolor="#cccccc") and count(child::td) != 1]';
 
 parse_one(
     urls    => [$url],
@@ -15,16 +15,16 @@ parse_one(
         col 1 => 'model', 'TEXT';
         col 2 => 'sappli',        [ 'TEXT', \&_marubatsu ];
         col 3 => 'mobile_widget', [ 'TEXT', \&_marubatsu ];
-        col 4 => 'flashlite' => [
-            'TEXT',
-            sub { s/^Flash Lite\N{TRADE MARK SIGN}// },
-            sub { s/\s// },
-            sub { $_ = undef if /\N{MULTIPLICATION SIGN}/ },    # `x' case.
-        ];
-        col 5 => 'gps_basic',  [ 'TEXT', \&_marubatsu ];
-        col 6 => 'gps_agps',   [ 'TEXT', \&_marubatsu ];
-        col 7 => 'felica',     [ 'TEXT', \&_marubatsu ];
-        col 8 => 'pc_browser', [ 'TEXT', \&_marubatsu ];
+     #  col 4 => 'flashlite' => [
+     #      'TEXT',
+     #      sub { s/^Flash Lite\N{TRADE MARK SIGN}// },
+     #      sub { s/\s// },
+     #      sub { $_ = undef if /\N{MULTIPLICATION SIGN}/ },    # `x' case.
+     #  ];
+        col 4 => 'gps_basic',  [ 'TEXT', \&_marubatsu ];
+        col 5 => 'gps_agps',   [ 'TEXT', \&_marubatsu ];
+        col 6 => 'felica',     [ 'TEXT', \&_marubatsu ];
+        col 7 => 'pc_browser', [ 'TEXT', \&_marubatsu ];
     },
 );
 

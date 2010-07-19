@@ -2,7 +2,7 @@ use strict;
 use warnings;
 use Test::Base;
 use LWP::Online ":skip_all";
-use WWW::MobileCarrierJP::ThirdForce::Service;
+use WWW::MobileCarrierJP::ThirdForce::Flash;
 
 plan tests => 1 + 2*blocks;
 
@@ -11,7 +11,7 @@ if ($ENV{YAML}) {
     require YAML;
     $res = YAML::LoadFile($ENV{YAML});
 } else {
-    $res = WWW::MobileCarrierJP::ThirdForce::Service->scrape();
+    $res = WWW::MobileCarrierJP::ThirdForce::Flash->scrape();
 }
 
 cmp_ok scalar(@$res), '>', 100, 'thirdforce has many phones';
@@ -47,62 +47,33 @@ __END__
 
 ===
 --- info
-model      : DM001SH
-sappli     : 1
-gps_basic  : 1
-gps_agps   : 0
-felica     : 1
-pc_browser : 1
-mobile_widget: 0
+flashlite: 3.1
+model: 945SH
+support_embedded_flv: 1
+support_flash9: 1
+support_progressive_flv: 1
 
 ===
 --- info
-model      : 820SC
-sappli     : 1
-gps_basic  : 0
-gps_agps   : 0
-felica     : 0
-pc_browser : 1
-mobile_widget: 0
+flashlite: ~
+model: 702MO
+support_embedded_flv: 0
+support_flash9: 0
+support_progressive_flv: 0
 
 ===
 --- info
-model      : 706SC
-sappli     : 1
-gps_basic  : 0
-gps_agps   : 0
-felica     : 0
-pc_browser : 0
-mobile_widget: 0
+flashlite: 3.0
+model: DM006SH
+support_embedded_flv: 1
+support_flash9: 0
+support_progressive_flv: 0
 
 ===
 --- info
-model      : 702MO
-sappli     : 1
-gps_basic  : 0
-gps_agps   : 0
-felica     : 0
-pc_browser : 0
-mobile_widget: 0
-
-===
---- info
-model      : 804NK
-sappli     : 1
-gps_basic  : 0
-gps_agps   : 0
-felica     : 0
-pc_browser : 0
-mobile_widget: 0
-
-===
---- info
-model      : 703SH
-sappli     : 1
-gps_basic  : 1
-gps_agps   : 0
-felica     : 0
-pc_browser : 0
-mobile_widget: 0
-
+flashlite: 2.0
+model: DM001SH
+support_embedded_flv: 0
+support_flash9: 0
+support_progressive_flv: 0
 
