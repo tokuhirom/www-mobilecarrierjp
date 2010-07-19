@@ -1,6 +1,7 @@
 package WWW::MobileCarrierJP;
 use strict;
 use warnings;
+use 5.008001;
 
 our $VERSION = '0.45';
 
@@ -23,10 +24,6 @@ Japanese Mobile Phone Carrier doesn't feed any information by the machine readab
 This is good wrapper for this problem.
 
 This module makes machine readable format from html :)
-
-=head1 TODO
-
- - softbank flash info
 
 =head1 KNOWLEDGE
 
