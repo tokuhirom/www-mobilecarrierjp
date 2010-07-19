@@ -1,5 +1,11 @@
 Revision history for Perl extension WWW::MobileCarrierJP
 
+0.45
+
+    [INCOMPATIBLE CHANGE]
+    - flash information was moved to http://creation.mb.softbank.jp/terminal/?lup=y&cat=flash
+    - If you want to scrape flash information, use ::Flash instead of ::Service.
+
 0.44
 
     (no feature changes)

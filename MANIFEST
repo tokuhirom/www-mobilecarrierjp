@@ -35,6 +35,7 @@ lib/WWW/MobileCarrierJP/EZWeb/DeviceID.pm
 lib/WWW/MobileCarrierJP/EZWeb/Model.pm
 lib/WWW/MobileCarrierJP/EZWeb/PictogramInfo.pm
 lib/WWW/MobileCarrierJP/ThirdForce/CIDR.pm
+lib/WWW/MobileCarrierJP/ThirdForce/Flash.pm
 lib/WWW/MobileCarrierJP/ThirdForce/HTTPHeader.pm
 lib/WWW/MobileCarrierJP/ThirdForce/Java.pm
 lib/WWW/MobileCarrierJP/ThirdForce/PictogramInfo.pm
@@ -58,6 +59,7 @@ t/020_docomo/14_docomo_java.t
 t/030_thirdforce/07_thirdforce_useragent.t
 t/030_thirdforce/10_thirdforce_service.t
 t/030_thirdforce/11_thirdforce_headers.t
+t/030_thirdforce/14_thirdforce_flash.t
 t/030_thirdforce/15_thirdforce_java.t
 t/040_common/04_cidr.t
 t/040_common/05_pictogram.t
