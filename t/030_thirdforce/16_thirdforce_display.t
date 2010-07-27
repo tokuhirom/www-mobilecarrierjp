@@ -122,7 +122,7 @@ appli_pixels:
         height: 448
         resolution: FWVGA
         width: 854
-browser_letters: 
+browser_characters: 
   - 
     orientation: 縦
     size_table: 
@@ -311,7 +311,7 @@ appli_pixels:
         height: 448
         resolution: FWVGA
         width: 854
-browser_letters: 
+browser_characters: 
   - 
     orientation: 縦
     size_table: 
@@ -494,7 +494,7 @@ appli_fontsize: []
 
 appli_pixels: []
 
-browser_letters: 
+browser_characters: 
   - 
     orientation: 縦
     size_table: 
@@ -539,7 +539,7 @@ appli_pixels:
         height: 260
         resolution: QVGA
         width: 240
-browser_letters: 
+browser_characters: 
   - 
     orientation: 縦
     size_table: 
@@ -684,7 +684,7 @@ appli_pixels:
         height: 448
         resolution: HXGA
         width: 1024
-browser_letters: 
+browser_characters: 
   - 
     orientation: 縦
     size_table: 
@@ -859,7 +859,7 @@ appli_pixels:
         height: 680
         resolution: WVGA(独自ｻｲｽﾞ)
         width: 480
-browser_letters: 
+browser_characters: 
   - 
     orientation: 縦
     size_table: 

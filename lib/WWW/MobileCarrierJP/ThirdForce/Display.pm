@@ -1,22 +1,22 @@
 package WWW::MobileCarrierJP::ThirdForce::Display;
-use WWW::MobileCarrierJP::Declare;
-use charnames ':full';
 
 use utf8;
+use charnames ':full';
 use List::Util qw/first/;
+use WWW::MobileCarrierJP::Declare;
 
 parse_one(
     urls    => ['http://creation.mb.softbank.jp/terminal/?lup=y&cat=display'],
     xpath   => q(//tr[@bgcolor="#FFFFFF" and @height="18"]),
     scraper => scraper {
-        col 1 => 'model'             => 'TEXT';
-        col 2 => 'browser_pixels'    => [ 'TEXT', \&_parse_pixels_table ];
-        col 3 => 'browser_letters'   => [ 'TEXT', \&_parse_letters_table ];
-        col 4 => 'appli_pixels'      => [ 'TEXT', \&_parse_appli_pixels_table ];
-        col 5 => 'appli_fontsize'    => [ 'TEXT', \&_parse_appli_pixels_table ];
-        col 6 => 'widget'            => [ 'TEXT', \&_parse_pixels_table ];
-        col 7 => 'widget_homescreen' => [ 'TEXT', \&_parse_pixels_table ];
-        col 8 => 'flash'             => [
+        col 1 => 'model'              => 'TEXT';
+        col 2 => 'browser_pixels'     => [ 'TEXT', \&_parse_pixels_table ];
+        col 3 => 'browser_characters' => [ 'TEXT', \&_parse_characters_table ];
+        col 4 => 'appli_pixels'       => [ 'TEXT', \&_parse_appli_pixels_table ];
+        col 5 => 'appli_fontsize'     => [ 'TEXT', \&_parse_appli_pixels_table ];
+        col 6 => 'widget'             => [ 'TEXT', \&_parse_pixels_table ];
+        col 7 => 'widget_homescreen'  => [ 'TEXT', \&_parse_pixels_table ];
+        col 8 => 'flash'              => [
             'TEXT',
             sub {
                 /(\d+)\s*x\s*(\d+)/ or return undef;
@@ -44,7 +44,7 @@ sub _parse_pixels_table {
 }
 
 # [{orientation}]\n({size}:{width}x{height}\n)+
-sub _parse_letters_table {
+sub _parse_characters_table {
     my $text = shift;
     my @result;
     $text =~ s/\s//g;
@@ -102,8 +102,7 @@ __END__
 
 =head1 NAME
 
-WWW::MobileCarrierJP::ThirdForce::Display -
-  get display informtation from ThirdForce site
+WWW::MobileCarrierJP::ThirdForce::Display - get display informtation from ThirdForce site
 
 =head1 SYNOPSIS
 
@@ -137,10 +136,10 @@ Arrayref of hashes, structured as follows.
             }, ...
         ],
 
-        # Maximum Displayable Letters in the Browser (Array)
-        # Same as above, but in addition, the maximum number is vary
+        # Maximum Displayable Characters in the Browser (Array)
+        # Same as above, in addition, the maximum number is vary
         # depends on the font size setting.
-        browser_letters => [
+        browser_characters => [
             {
                 orientation => '縦',
                 size_table  => [
