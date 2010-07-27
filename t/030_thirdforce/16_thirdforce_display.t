@@ -36,49 +36,49 @@ __END__
 
 ===
 --- info
-appli_letters: 
+appli_fontsize: 
   - 
     orientation: 縦
     size_table: 
       - 
-        cols: 12
+        width: 12
         resolution: QQVGA
-        rows: 12
+        height: 12
       - 
-        cols: 20
+        width: 20
         resolution: QVGA
-        rows: 20
+        height: 20
       - 
-        cols: 20
+        width: 20
         resolution: WQVGA
-        rows: 20
+        height: 20
       - 
-        cols: 40
+        width: 40
         resolution: VGA
-        rows: 40
+        height: 40
       - 
-        cols: 40
+        width: 40
         resolution: WVGA
-        rows: 40
+        height: 40
       - 
-        cols: 40
+        width: 40
         resolution: FWVGA
-        rows: 40
+        height: 40
   - 
     orientation: 横
     size_table: 
       - 
-        cols: 20
+        width: 20
         resolution: WQVGA
-        rows: 20
+        height: 20
       - 
-        cols: 40
+        width: 40
         resolution: WVGA
-        rows: 40
+        height: 40
       - 
-        cols: 40
+        width: 40
         resolution: FWVGA
-        rows: 40
+        height: 40
 appli_pixels: 
   - 
     orientation: 縦
@@ -212,8 +212,8 @@ flash:
   height: 738
   width: 480
 model: 945SH
-widget: ~
-widget_maximized: 
+widget_homescreen: ~
+widget: 
   - 
     height: 738
     orientation: 縦
@@ -225,49 +225,49 @@ widget_maximized:
 
 ===
 --- info
-appli_letters: 
+appli_fontsize: 
   - 
     orientation: 縦
     size_table: 
       - 
-        cols: 12
+        width: 12
         resolution: QQVGA
-        rows: 12
+        height: 12
       - 
-        cols: 20
+        width: 20
         resolution: QVGA
-        rows: 20
+        height: 20
       - 
-        cols: 20
+        width: 20
         resolution: WQVGA
-        rows: 20
+        height: 20
       - 
-        cols: 40
+        width: 40
         resolution: VGA
-        rows: 40
+        height: 40
       - 
-        cols: 40
+        width: 40
         resolution: WVGA
-        rows: 40
+        height: 40
       - 
-        cols: 40
+        width: 40
         resolution: FWVGA
-        rows: 40
+        height: 40
   - 
     orientation: 横
     size_table: 
       - 
-        cols: 20
+        width: 20
         resolution: WQVGA
-        rows: 20
+        height: 20
       - 
-        cols: 40
+        width: 40
         resolution: WVGA
-        rows: 40
+        height: 40
       - 
-        cols: 40
+        width: 40
         resolution: FWVGA
-        rows: 40
+        height: 40
 appli_pixels: 
   - 
     orientation: 縦
@@ -485,12 +485,12 @@ flash:
   height: 754
   width: 480
 model: 923SH
+widget_homescreen: ~
 widget: ~
-widget_maximized: ~
 
 ===
 --- info
-appli_letters: []
+appli_fontsize: []
 
 appli_pixels: []
 
@@ -510,23 +510,23 @@ browser_pixels:
     width: 176
 flash: ~
 model: 702sMO
+widget_homescreen: ~
 widget: ~
-widget_maximized: ~
 
 ===
 --- info
-appli_letters: 
+appli_fontsize: 
   - 
     orientation: 縦
     size_table: 
       - 
-        cols: 12
+        width: 12
         resolution: QQVGA
-        rows: 12
+        height: 12
       - 
-        cols: 20
+        width: 20
         resolution: QVGA
-        rows: 20
+        height: 20
 appli_pixels: 
   - 
     orientation: 縦
@@ -577,62 +577,62 @@ flash:
   height: 270
   width: 234
 model: 705SH
+widget_homescreen: ~
 widget: ~
-widget_maximized: ~
 
 ===
 --- info
-appli_letters: 
+appli_fontsize: 
   - 
     orientation: 縦
     size_table: 
       - 
-        cols: 12
+        width: 12
         resolution: QQVGA
-        rows: 12
+        height: 12
       - 
-        cols: 20
+        width: 20
         resolution: QVGA
-        rows: 20
+        height: 20
       - 
-        cols: 20
+        width: 20
         resolution: WQVGA
-        rows: 20
+        height: 20
       - 
-        cols: 40
+        width: 40
         resolution: VGA
-        rows: 40
+        height: 40
       - 
-        cols: 40
+        width: 40
         resolution: WVGA
-        rows: 40
+        height: 40
       - 
-        cols: 40
+        width: 40
         resolution: FWVGA
-        rows: 40
+        height: 40
       - 
-        cols: 40
+        width: 40
         resolution: HXGA
-        rows: 40
+        height: 40
   - 
     orientation: 横
     size_table: 
       - 
-        cols: 20
+        width: 20
         resolution: WQVGA
-        rows: 20
+        height: 20
       - 
-        cols: 40
+        width: 40
         resolution: WVGA
-        rows: 40
+        height: 40
       - 
-        cols: 40
+        width: 40
         resolution: FWVGA
-        rows: 40
+        height: 40
       - 
-        cols: 40
+        width: 40
         resolution: HXGA
-        rows: 40
+        height: 40
 appli_pixels: 
   - 
     orientation: 縦
@@ -774,7 +774,7 @@ flash:
   height: 824
   width: 480
 model: 941SH
-widget: 
+widget_homescreen: 
   - 
     height: 824
     orientation: 縦
@@ -783,7 +783,7 @@ widget:
     height: 352
     orientation: 横
     width: 1024
-widget_maximized: 
+widget: 
   - 
     height: 824
     orientation: 縦
@@ -795,38 +795,38 @@ widget_maximized:
 
 ===
 --- info
-appli_letters: 
+appli_fontsize: 
   - 
     orientation: 縦
     size_table: 
       - 
-        cols: 12
+        width: 12
         resolution: QQVGA
-        rows: 12
+        height: 12
       - 
-        cols: 18
+        width: 18
         resolution: QVGA
-        rows: 18
+        height: 18
       - 
-        cols: 18
+        width: 18
         resolution: WQVGA
-        rows: 18
+        height: 18
       - 
-        cols: 18
+        width: 18
         resolution: WQVGA(独自ｻｲｽﾞ)
-        rows: 18
+        height: 18
       - 
-        cols: 36
+        width: 36
         resolution: VGA
-        rows: 36
+        height: 36
       - 
-        cols: 36
+        width: 36
         resolution: WVGA
-        rows: 36
+        height: 36
       - 
-        cols: 36
+        width: 36
         resolution: WVGA(独自ｻｲｽﾞ)
-        rows: 36
+        height: 36
 appli_pixels: 
   - 
     orientation: 縦
@@ -897,6 +897,6 @@ flash:
   height: 341
   width: 236
 model: 920T
+widget_homescreen: ~
 widget: ~
-widget_maximized: ~
 
