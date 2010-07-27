@@ -48,10 +48,10 @@ sub scrape {
                         split m[(?:&nbsp;|<br\s*/>|\r|\n)]i, $col
                     )[0]; # XXX: 複数あるときは一番最初のがブラウザ
                     $col =~ s/ *（.+//;
-                    $col =~ s/^\s*//;
-                    $col =~ s/\s*$//;
                     $col =~ s/<[^><]+>//g; # remove tags
                     $col =~ s/(&#xA0.*)$//;
+                    $col =~ s/^\s*//;
+                    $col =~ s/\s*$//;
                     return $col;
                 }
             }->();
