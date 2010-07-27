@@ -1,5 +1,10 @@
 Revision history for Perl extension WWW::MobileCarrierJP
 
+0.46
+
+    - ThirdForce::Display: added(tnj)
+    - DoCoMo::UserAgent: user-agent has useless whitespace on its head(tnj)
+
 0.45
 
     [INCOMPATIBLE CHANGE]
