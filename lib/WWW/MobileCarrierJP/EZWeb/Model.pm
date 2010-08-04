@@ -21,7 +21,7 @@ parse_one(
         col 9 => 'png',
             [ 'TEXT', sub { /○|△/ ? 1 : undef } ];
         col 12 =>'flash_lite',
-            [ 'TEXT', sub { /●/ ? '2.0' : (/◎|○/ ? '1.1' : undef) } ];
+            [ 'TEXT', sub { /^(\d\.\d).*$/; $1 } ];
     },
 );
 
