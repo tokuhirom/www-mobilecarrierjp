@@ -1,5 +1,9 @@
 Revision history for Perl extension WWW::MobileCarrierJP
 
+0.47
+
+    - fix scraper rule of flash_lite for ezweb(takuya yamamoto)
+
 0.46
 
     - ThirdForce::Display: added(tnj)
