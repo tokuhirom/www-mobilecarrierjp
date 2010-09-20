@@ -1,5 +1,10 @@
 Revision history for Perl extension WWW::MobileCarrierJP
 
+0.48
+
+    - some tweaks for Makefile.PL(tokuhirom)
+    - depend to latest HTML::TreeBuilder::LibXML
+
 0.47
 
     - fix scraper rule of flash_lite for ezweb(takuya yamamoto)
