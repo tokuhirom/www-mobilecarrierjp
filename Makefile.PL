@@ -16,7 +16,7 @@ features(
     ],
     'fast parser' => [
         -default => 0,
-        recommends('HTML::TreeBuilder::LibXML', 0.11),
+        recommends('HTML::TreeBuilder::LibXML', 0.12),
     ],
 );
 
