@@ -5,7 +5,7 @@ all_from 'lib/WWW/MobileCarrierJP.pm';
 requires 'Web::Scraper'  => '0.24';
 requires 'Exporter' => '0.60';
 requires 'HTML::Selector::XPath' => '0.03';
-requires 'HTML::TableExtract';
+requires 'HTML::TableExtract' => 2.10;
 requires 'LWP::UserAgent' => '5.834';
 requires 'URI';
 
