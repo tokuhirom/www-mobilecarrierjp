@@ -28,7 +28,6 @@ lib/WWW/MobileCarrierJP/DoCoMo/HTMLVersion.pm
 lib/WWW/MobileCarrierJP/DoCoMo/Java.pm
 lib/WWW/MobileCarrierJP/DoCoMo/PictogramInfo.pm
 lib/WWW/MobileCarrierJP/DoCoMo/UserAgent.pm
-lib/WWW/MobileCarrierJP/EZWeb/BREW.pm
 lib/WWW/MobileCarrierJP/EZWeb/CIDR.pm
 lib/WWW/MobileCarrierJP/EZWeb/DeviceID.pm
 lib/WWW/MobileCarrierJP/EZWeb/Model.pm
@@ -50,7 +49,6 @@ README
 t/00_compile.t
 t/010_ezweb/01_ez_modelmap.t
 t/010_ezweb/02_ez_deviceidmap.t
-t/010_ezweb/09_ezweb_brew.t
 t/020_docomo/03_docomo_displaymap.t
 t/020_docomo/06_docomo_flash.t
 t/020_docomo/08_docomo_htmlversion.t
