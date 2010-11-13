@@ -1,22 +1,25 @@
 package WWW::MobileCarrierJP::DoCoMo::CIDR;
 use strict;
 use warnings;
+use utf8;
 use Web::Scraper;
 use URI;
+use WWW::MobileCarrierJP::Declare;
 
 sub url { 'http://www.nttdocomo.co.jp/service/imode/make/content/ip/'; }
 
 sub scrape {
-    scraper {
-        process
-            '//div[@class="boxArea" and count(preceding-sibling::*)=2]/div/div[@class="section"]/ul[@class="normal txt" and preceding-sibling::div[1][@class="titlept03"]]/li',
-                'cidr[]', [
-                    'TEXT', sub {
-                        m{^([0-9.]+)(/[0-9]+)};
-                        +{ ip => $1, subnetmask => $2 };
-                    }
-                ];
-    }->scrape(URI->new(__PACKAGE__->url))->{cidr};
+    my $content = get(url());
+    if ($content =~ m{\Q<h3 class="title">WEBアクセス時 （iモードブラウザ）</h3>\E(.+)\Q<h3 class="title">WEBアクセス時（フルブラウザ）</h3>\E}s) {
+        my $body = $1;
+        my @ret;
+        while ($body =~ s!<li>([0-9.]+)/([0-9]+).*</li>!!) {
+            push @ret, +{ ip => $1, subnetmask => $2 };
+        }
+        return \@ret;
+    } else {
+        die "cannot parse the html: " . url();
+    }
 }
 
 1;
