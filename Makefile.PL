@@ -23,6 +23,7 @@ features(
 auto_set_repository();
 
 tests 't/*.t t/*/*.t t/*/*/*.t t/*/*/*/*.t';
+recursive_author_tests 'xt';
 test_requires 'LWP::Online' => 1.07;
 test_requires 'Test::More' => 0.96;
 use_test_base;
