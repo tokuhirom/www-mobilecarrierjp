@@ -1,5 +1,9 @@
 Revision history for Perl extension WWW::MobileCarrierJP
 
+0.50
+
+    - move live tests to xt/ for fast installing(suggested by miyagawa++)
+
 0.49
 
     - depend to HTML-TableExtract(tokuhirom)
