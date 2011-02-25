@@ -37,6 +37,16 @@ softbank phone supports gif(without type C, P, W).
 
 L<http://www2.developers.softbankmobile.co.jp/dp/tool_dl/download.php?docid=120&companyid=>
 
+=head1 COOKBOOK
+
+=over 4
+
+=item HOW DO I GET YAMLs FASTER?
+
+use L<HTML::TreeBuilder::LibXML>.
+
+=back
+
 =head1 AUTHOR
 
 Tokuhiro Matsuno <tokuhirom gmail com>

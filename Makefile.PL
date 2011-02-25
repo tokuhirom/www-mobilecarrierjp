@@ -14,10 +14,6 @@ features(
         -default => 1,
         recommends('CAM::PDF', 0),
     ],
-    'fast parser' => [
-        -default => 0,
-        recommends('HTML::TreeBuilder::LibXML', 0.12),
-    ],
 );
 
 auto_set_repository();
