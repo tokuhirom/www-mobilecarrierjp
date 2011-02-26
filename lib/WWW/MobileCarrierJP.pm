@@ -29,7 +29,7 @@ This module makes machine readable format from html :)
 
 =head2 IMAGE
 
-=head3 ThirdForce
+=head3 Softbank
 
 softbank phone supports jpeg(without type C2).
 

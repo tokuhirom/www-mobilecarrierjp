@@ -2,9 +2,9 @@ use strict;
 use warnings;
 use Test::More;
 use LWP::Online ":skip_all";
-use WWW::MobileCarrierJP::ThirdForce::HTTPHeader;
+use WWW::MobileCarrierJP::Softbank::HTTPHeader;
 
-my $rows = WWW::MobileCarrierJP::ThirdForce::HTTPHeader->scrape();
+my $rows = WWW::MobileCarrierJP::Softbank::HTTPHeader->scrape();
 
 my @cases = (
     {

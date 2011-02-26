@@ -4,7 +4,7 @@ use Test::More;
 use LWP::Online ":skip_all";
 plan tests => 4*1;
 
-my @carrier = qw/EZWeb DoCoMo AirHPhone ThirdForce/;
+my @carrier = qw/EZWeb DoCoMo AirHPhone Softbank/;
 for my $carrier (@carrier) {
     my $class = "WWW::MobileCarrierJP::${carrier}::CIDR";
 

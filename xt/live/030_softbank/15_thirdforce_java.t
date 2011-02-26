@@ -2,11 +2,11 @@ use strict;
 use warnings;
 use Test::Base;
 use LWP::Online ":skip_all";
-use WWW::MobileCarrierJP::ThirdForce::Java;
+use WWW::MobileCarrierJP::Softbank::Java;
 
 plan tests => 2 + 2 * blocks;
 
-my $dat = WWW::MobileCarrierJP::ThirdForce::Java->scrape;
+my $dat = WWW::MobileCarrierJP::Softbank::Java->scrape;
 is ref($dat), 'ARRAY';
 is join(',', sort(keys %{$dat->[0]})), 'cldc,felica_api,heap,limit,location_api,midp,model,profile,size';
 
