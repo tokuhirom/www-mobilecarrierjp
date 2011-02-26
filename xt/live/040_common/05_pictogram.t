@@ -4,6 +4,7 @@ use utf8;
 use Test::Base;
 use LWP::Online ":skip_all";
 use UNIVERSAL::require;
+use Data::Dumper;
 
 eval "use CAM::PDF; 1;"; ## no critic.
 if ($@) {
@@ -27,7 +28,7 @@ run {
     cmp_ok scalar(@$dat), '>', 100;
     my ($row, ) = grep { $block->expected->{unicode} eq $_->{unicode} } @$dat;
     ok $row, "got this unicode";
-    is_deeply $row, $block->expected, $block->name;
+    is_deeply($row, $block->expected, $block->name) or diag(Dumper($dat));
 };
 
 __END__
@@ -56,29 +57,24 @@ unicode: E63E
 --- input: Softbank
 --- expected
 unicode: E001
-sjis: 1b2447210f
 
 ===
 --- input: Softbank
 --- expected
 unicode: E02D
-sjis: 1b24474d0f
 
 ===
 --- input: Softbank
 --- expected
 unicode: E02E
-sjis: 1b24474e0f
 
 ===
 --- input: Softbank
 --- expected
 unicode: E05A
-sjis: 1b24477a0f
 
 ===
 --- input: Softbank
 --- expected
 unicode: E537
-sjis: 1b2451570f
 
