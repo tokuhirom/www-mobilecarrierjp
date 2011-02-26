@@ -3,9 +3,9 @@ use warnings;
 use Test::More;
 use LWP::Online ":skip_all";
 plan tests => 7;
-use WWW::MobileCarrierJP::Softbank::UserAgent;
+use WWW::MobileCarrierJP::ThirdForce::UserAgent;
 
-my $dat = WWW::MobileCarrierJP::Softbank::UserAgent->scrape;
+my $dat = WWW::MobileCarrierJP::ThirdForce::UserAgent->scrape;
 ok ref($dat), 'ARRAY';
 cmp_ok scalar(@$dat), '>', 30;
 
