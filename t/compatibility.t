@@ -3,7 +3,8 @@ use warnings;
 use utf8;
 use Test::More;
 
-my @x = qw/CIDR Flash Java Service Display HTTPHeader PictogramInfo UserAgent/;
+# UserAgent は DEPRECATED なので ThirdForce の方にうつしてない
+my @x = qw/CIDR Flash Java Service Display HTTPHeader PictogramInfo/;
 
 for (@x) {
     use_ok "WWW::MobileCarrierJP::ThirdForce::$_";
