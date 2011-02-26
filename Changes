@@ -1,5 +1,12 @@
 Revision history for Perl extension WWW::MobileCarrierJP
 
+0.51
+
+    - fixed test case
+    - added url method for each scraper classes.
+    - better docs
+    - rename Thirdforce to Softbank. But Thirdforce::* module still be exists for compatibility.
+
 0.50
 
     - move live tests to xt/ for fast installing(suggested by miyagawa++)
