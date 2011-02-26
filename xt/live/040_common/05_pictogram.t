@@ -27,7 +27,7 @@ run {
     cmp_ok scalar(@$dat), '>', 100;
     my ($row, ) = grep { $block->expected->{unicode} eq $_->{unicode} } @$dat;
     ok $row, "got this unicode";
-    is_deeply $row, $block->expected;
+    is_deeply $row, $block->expected, $block->name;
 };
 
 __END__
