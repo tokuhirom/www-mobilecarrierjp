@@ -53,31 +53,31 @@ sjis: F89F
 unicode: E63E
 
 ===
---- input: ThirdForce
+--- input: Softbank
 --- expected
 unicode: E001
 sjis: 1b2447210f
 
 ===
---- input: ThirdForce
+--- input: Softbank
 --- expected
 unicode: E02D
 sjis: 1b24474d0f
 
 ===
---- input: ThirdForce
+--- input: Softbank
 --- expected
 unicode: E02E
 sjis: 1b24474e0f
 
 ===
---- input: ThirdForce
+--- input: Softbank
 --- expected
 unicode: E05A
 sjis: 1b24477a0f
 
 ===
---- input: ThirdForce
+--- input: Softbank
 --- expected
 unicode: E537
 sjis: 1b2451570f

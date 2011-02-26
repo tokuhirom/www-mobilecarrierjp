@@ -2,7 +2,7 @@ use strict;
 use warnings;
 use Test::Base;
 use LWP::Online ":skip_all";
-use WWW::MobileCarrierJP::ThirdForce::Service;
+use WWW::MobileCarrierJP::Softbank::Service;
 
 plan tests => 1 + 2*blocks;
 
@@ -11,7 +11,7 @@ if ($ENV{YAML}) {
     require YAML;
     $res = YAML::LoadFile($ENV{YAML});
 } else {
-    $res = WWW::MobileCarrierJP::ThirdForce::Service->scrape();
+    $res = WWW::MobileCarrierJP::Softbank::Service->scrape();
 }
 
 cmp_ok scalar(@$res), '>', 100, 'thirdforce has many phones';

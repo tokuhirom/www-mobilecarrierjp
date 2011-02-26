@@ -14,7 +14,7 @@ sub import {
     *{"${pkg}::modules"} = \&modules;
 }
 
-sub carriers () { qw/EZWeb DoCoMo AirHPhone ThirdForce/ }
+sub carriers () { qw/EZWeb DoCoMo AirHPhone Softbank/ }
 sub modules($) {
     my $modname = shift;
     my @m;

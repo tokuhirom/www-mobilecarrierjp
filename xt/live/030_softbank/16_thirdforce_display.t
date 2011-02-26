@@ -7,14 +7,14 @@ use LWP::Online ":skip_all";
 
 plan tests => 2 + 2 * blocks;
 
-use_ok "WWW::MobileCarrierJP::ThirdForce::Display";
+use_ok "WWW::MobileCarrierJP::Softbank::Display";
 
 my $res;
 if ($ENV{YAML}) {
     require YAML;
     $res = YAML::LoadFile($ENV{YAML});
 } else {
-    $res = WWW::MobileCarrierJP::ThirdForce::Display->scrape();
+    $res = WWW::MobileCarrierJP::Softbank::Display->scrape();
 }
 
 cmp_ok scalar(@$res), '>', 100, 'thirdforce has many phones';
