@@ -4,6 +4,7 @@ use charnames ':full';
 use URI;
 
 my $url = 'http://www.nttdocomo.co.jp/service/imode/make/content/spec/iappli/index.html';
+sub url { [ $url ] }
 
 sub scrape {
     my @result;
@@ -75,9 +76,11 @@ sub scrape {
 1;
 __END__
 
+=encoding utf-8
+
 =head1 NAME
 
-WWW::MobileCarrierJP::DoCoMo::Java - get iappli informtation from DoCoMo site.
+WWW::MobileCarrierJP::DoCoMo::Java - Java(DoCoMo)
 
 =head1 SYNOPSIS
 

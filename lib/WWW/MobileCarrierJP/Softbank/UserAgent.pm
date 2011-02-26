@@ -13,9 +13,11 @@ parse_one(
 1;
 __END__
 
+=encoding utf-8
+
 =head1 NAME
 
-WWW::MobileCarrierJP::Softbank::UserAgent - get UserAgent informtation from Softbank site.(OBSOLETE)
+WWW::MobileCarrierJP::Softbank::UserAgent - get UserAgent informtation from Softbank site(OBSOLETE)
 
 =head1 SYNOPSIS
 

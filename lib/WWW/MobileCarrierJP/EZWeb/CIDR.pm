@@ -21,9 +21,11 @@ sub scrape {
 
 __END__
 
+=encoding utf-8
+
 =head1 NAME
 
-WWW::MobileCarrierJP::EZWeb::CIDR - get CIDR informtation from EZWeb site.
+WWW::MobileCarrierJP::EZWeb::CIDR - CIDR(EZweb)
 
 =head1 SYNOPSIS
 

@@ -49,9 +49,11 @@ sub _exchange {
 1;
 __END__
 
+=encoding utf-8
+
 =head1 NAME
 
-WWW::MobileCarrierJP::Softbank::Java - get Java informtation from Softbank site.
+WWW::MobileCarrierJP::Softbank::Java - Java(Softbank)
 
 =head1 SYNOPSIS
 

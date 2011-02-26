@@ -5,6 +5,7 @@ use WWW::MobileCarrierJP::Declare;
 use LWP::UserAgent;
 
 my @urls = map { sprintf 'http://creation.mb.softbank.jp/web/web_pic_%02d.html', $_ } 1..6;
+sub url { [@urls] }
 
 sub scrape {
     my $xpath = q{//div[@class='contents']/table[2]/tr[1]/td/table/tr/td/table/tr[count(preceding-sibling::tr)>0]};
@@ -35,9 +36,11 @@ sub scrape {
 1;
 __END__
 
+=encoding utf-8
+
 =head1 NAME
 
-WWW::MobileCarrierJP::Softbank::PictogramInfo - get PictogramInfo informtation from Softbank site.
+WWW::MobileCarrierJP::Softbank::PictogramInfo - 絵文字(Softbank)
 
 =head1 SYNOPSIS
 

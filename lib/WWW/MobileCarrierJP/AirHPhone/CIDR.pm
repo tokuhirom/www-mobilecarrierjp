@@ -18,9 +18,11 @@ sub scrape {
 1;
 __END__
 
+=encoding utf-8
+
 =head1 NAME
 
-WWW::MobileCarrierJP::AirHPhone::CIDR - get CIDR informtation from willcom site.
+WWW::MobileCarrierJP::AirHPhone::CIDR - CIDR(Willcom)
 
 =head1 SYNOPSIS
 

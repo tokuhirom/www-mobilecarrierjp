@@ -7,6 +7,7 @@ use Carp;
 use Encode;
 
 my $url = 'http://www.au.kddi.com/ezfactory/tec/spec/pdf/typeD.pdf';
+sub url { [ $url ] }
 
 sub scrape {
     my $ua = LWP::UserAgent->new(agent => __PACKAGE__);
@@ -40,9 +41,11 @@ sub _process_pdf {
 1;
 __END__
 
+=encoding utf-8
+
 =head1 NAME
 
-WWW::MobileCarrierJP::EZWeb::PictogramInfo - get PictogramInfo informtation from EZWeb site.
+WWW::MobileCarrierJP::EZWeb::PictogramInfo - 絵文字(EZWeb)
 
 =head1 SYNOPSIS
 

@@ -45,9 +45,11 @@ parse_one(
 1;
 __END__
 
+=encoding utf-8
+
 =head1 NAME
 
-WWW::MobileCarrierJP::DoCoMo::Flash - get flash informtation from DoCoMo site.
+WWW::MobileCarrierJP::DoCoMo::Flash - Flash(DoCoMo)
 
 =head1 SYNOPSIS
 

@@ -30,9 +30,11 @@ sub _marubatsu { $_ = $_ =~ /\N{WHITE CIRCLE}|\N{BULLSEYE}/ ? 1 : 0 }
 1;
 __END__
 
+=encoding utf-8
+
 =head1 NAME
 
-WWW::MobileCarrierJP::Softbank::Flash - get Flash informtation from Softbank site.
+WWW::MobileCarrierJP::Softbank::Flash - Flash(Softbank)
 
 =head1 SYNOPSIS
 

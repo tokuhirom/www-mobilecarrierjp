@@ -100,9 +100,11 @@ sub _parse_appli_pixels_table {
 
 __END__
 
+=encoding utf-8
+
 =head1 NAME
 
-WWW::MobileCarrierJP::Softbank::Display - get display informtation from Softbank site
+WWW::MobileCarrierJP::Softbank::Display - ディスプレイ(Softbank)
 
 =head1 SYNOPSIS
 

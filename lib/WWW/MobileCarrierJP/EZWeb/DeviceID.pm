@@ -6,6 +6,7 @@ use Web::Scraper;
 use Carp;
 
 my $url = 'http://www.au.kddi.com/ezfactory/tec/spec/4_4.html';
+sub url { [$url] }
 
 sub scrape {
     my $result;
@@ -39,9 +40,11 @@ sub scrape {
 1;
 __END__
 
+=encoding utf-8
+
 =head1 NAME
 
-WWW::MobileCarrierJP::EZWeb::DeviceID - get DeviceID informtation from EZWeb site.
+WWW::MobileCarrierJP::EZWeb::DeviceID - DeviceID(DoCoMo)
 
 =head1 SYNOPSIS
 

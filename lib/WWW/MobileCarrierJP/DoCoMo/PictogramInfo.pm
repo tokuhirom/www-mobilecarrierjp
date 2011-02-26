@@ -10,6 +10,7 @@ my @url =
     "http://www.nttdocomo.co.jp/service/imode/make/content/pictograph/extention/index.html",
     "http://www.nttdocomo.co.jp/english/service/imode/make/content/pictograph/extention/index.html",
 );
+sub url { \@url }
 
 sub scrape {
     my $res;
@@ -50,9 +51,11 @@ sub scrape {
 1;
 __END__
 
+=encoding utf-8
+
 =head1 NAME
 
-WWW::MobileCarrierJP::DoCoMo::PictogramInfo - get pictogram informtation from DoCoMo site.
+WWW::MobileCarrierJP::DoCoMo::PictogramInfo - 絵文字(DoCoMo)
 
 =head1 SYNOPSIS
 

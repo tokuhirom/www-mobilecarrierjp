@@ -35,9 +35,11 @@ sub _undefine {
 1;
 __END__
 
+=encoding utf-8
+
 =head1 NAME
 
-WWW::MobileCarrierJP::Softbank::HTTPHeader - get HTTPHeader informtation from Softbank site.
+WWW::MobileCarrierJP::Softbank::HTTPHeader - HTTPヘッダ(Softbank)
 
 =head1 SYNOPSIS
 

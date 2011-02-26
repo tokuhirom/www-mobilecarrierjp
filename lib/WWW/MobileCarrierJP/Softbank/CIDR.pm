@@ -25,9 +25,11 @@ sub scrape {
 1;
 __END__
 
+=encoding utf-8
+
 =head1 NAME
 
-WWW::MobileCarrierJP::Softbank::CIDR - get CIDR informtation from Softbank site.
+WWW::MobileCarrierJP::Softbank::CIDR - CIDR(Softbank)
 
 =head1 SYNOPSIS
 

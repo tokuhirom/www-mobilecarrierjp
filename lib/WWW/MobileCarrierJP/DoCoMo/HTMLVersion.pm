@@ -41,9 +41,11 @@ parse_one(
 1;
 __END__
 
+=encoding utf-8
+
 =head1 NAME
 
-WWW::MobileCarrierJP::DoCoMo::HTMLVersion - get HTMLVersion informtation from DoCoMo site.
+WWW::MobileCarrierJP::DoCoMo::HTMLVersion - HTMLVersion(DoCoMo)
 
 =head1 SYNOPSIS
 

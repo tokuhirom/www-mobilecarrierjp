@@ -23,9 +23,11 @@ sub scrape {
 1;
 __END__
 
+=encoding utf-8
+
 =head1 NAME
 
-WWW::MobileCarrierJP::DoCoMo::CIDR - get CIDR informtation from DoCoMo site.
+WWW::MobileCarrierJP::DoCoMo::CIDR - CIDR(DoCoMo)
 
 =head1 SYNOPSIS
 

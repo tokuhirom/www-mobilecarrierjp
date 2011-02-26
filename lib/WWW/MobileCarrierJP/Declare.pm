@@ -52,6 +52,10 @@ sub parse_one {
     my $pkg = caller(0);
     no strict 'refs';
 
+    unless ($pkg->can('url')) {
+        *{"$pkg\::url"} = sub { $args{urls} };
+    }
+
     *{"$pkg\::scrape"} = sub {
         my @res = ();
         my $urls = $args{urls} or die "missing urls";

@@ -28,9 +28,11 @@ parse_one(
 1;
 __END__
 
+=encoding utf-8
+
 =head1 NAME
 
-WWW::MobileCarrierJP::EZWeb::Model - get Model informtation from EZWeb site.
+WWW::MobileCarrierJP::EZWeb::Model - Model(EZweb)
 
 =head1 SYNOPSIS
 

@@ -7,6 +7,7 @@ use Encode;
 use Carp;
 
 my $URL = 'http://www.nttdocomo.co.jp/service/imode/make/content/spec/screen_area/index.html';
+sub url { $URL }
 
 sub scrape {
     my $html = decode( 'cp932', _get($URL) );
@@ -54,9 +55,11 @@ RE
 1;
 __END__
 
+=encoding utf-8
+
 =head1 NAME
 
-WWW::MobileCarrierJP::DoCoMo::Display - get display informtation from DoCoMo site.
+WWW::MobileCarrierJP::DoCoMo::Display - ディスプレイ(DoCoMo)
 
 =head1 SYNOPSIS
 

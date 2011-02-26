@@ -33,9 +33,11 @@ sub _marubatsu { $_ = $_ =~ /\N{WHITE CIRCLE}|\N{BULLSEYE}/ ? 1 : 0 }
 1;
 __END__
 
+=encoding utf-8
+
 =head1 NAME
 
-WWW::MobileCarrierJP::Softbank::Service - get Service informtation from Softbank site.
+WWW::MobileCarrierJP::Softbank::Service - サービス(Softbank)
 
 =head1 SYNOPSIS
 

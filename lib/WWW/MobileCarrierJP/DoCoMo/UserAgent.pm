@@ -4,6 +4,7 @@ use HTML::Selector::XPath 'selector_to_xpath';
 use charnames ':full';
 
 my $URL = 'http://www.nttdocomo.co.jp/service/imode/make/content/spec/useragent/index.html';
+sub url { [$URL] }
 
 # 不要なカラム
 our @TRASH_XPATHS = (
@@ -73,9 +74,11 @@ sub scrape {
 1;
 __END__
 
+=encoding utf-8
+
 =head1 NAME
 
-WWW::MobileCarrierJP::DoCoMo::UserAgent - get user agent informtation from DoCoMo site.
+WWW::MobileCarrierJP::DoCoMo::UserAgent - UserAgent(DoCoMo)
 
 =head1 SYNOPSIS
 

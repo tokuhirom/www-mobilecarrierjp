@@ -16,6 +16,7 @@ my $datdir = File::Spec->catfile($FindBin::Bin, '..', 'dat');
 GetOptions(
     'format=s' => \$format,
     'datdir=s' => \$datdir,
+    'softbank' => \my $softbank,
 ) or pod2usage();
 mkpath $datdir;
 my $dumper = do {
@@ -24,7 +25,7 @@ my $dumper = do {
         sub { YAML::Dump(@_) }
     } elsif ($format eq 'JSON') {
         require JSON;
-        sub { JSON::encode_json(@_) }
+        sub { JSON->new->utf8->canonical->encode(@_) }
     } else {
         print "Unknown format: $format";
         pod2usage();
@@ -36,8 +37,13 @@ my $pluggable = Module::Pluggable::Object->new(
     'search_path' => ['WWW::MobileCarrierJP'],
 );
 
-for my $module ($pluggable->plugins()) {
+LOOP: for my $module ($pluggable->plugins()) {
     next if $module eq 'WWW::MobileCarrierJP::Declare';
+    if ($softbank) {
+        next if $module =~ /WWW::MobileCarrierJP::ThirdForce/;
+    } else {
+        next if $module =~ /WWW::MobileCarrierJP::Softbank/;
+    }
 
     print "processing $module\n";
 
@@ -47,13 +53,28 @@ for my $module ($pluggable->plugins()) {
     $fname = lc $fname;
 
     my $ofname = File::Spec->catfile($datdir, "$fname." . lc($format));
+    my $serialized = $dumper->($module->scrape());
+    
+    # すでにファイルが存在し、内容が同一である場合には更新しない
+    if (-f $ofname) {
+        open my $ifh, '<:utf8', $ofname;
+        my $original = do { local $/; <$ifh> };
+        if ($original eq $serialized) {
+            next LOOP;
+        }
+    }
+
     open my $fh, '>:utf8', $ofname;
-    print { $fh } $dumper->($module->scrape());
+    print { $fh } $serialized;
 }
 
 __END__
 
 =head1 SYNOPSIS
 
-    % www-mobilecarrierjp-dump_all.pl --format=JSON --datdir=/path/to/output
+    % www-mobilecarrierjp-dump_all.pl --format=JSON --datdir=/path/to/output --softbank
+
+    --format=JSON              出力フォーマットを指定する(JSON または YAML を選択可能)
+    --datdir=/path/to/output   出力先ディレクトリを指定する
+    --softbank                 ThirdForce ではなく Softbank というファイル名を仕様する
 
