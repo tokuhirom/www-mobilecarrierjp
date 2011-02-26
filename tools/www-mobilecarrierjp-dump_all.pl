@@ -60,11 +60,13 @@ LOOP: for my $module ($pluggable->plugins()) {
         open my $ifh, '<:utf8', $ofname;
         my $original = do { local $/; <$ifh> };
         if ($original eq $serialized) {
+            print "$ofname is not modified\n";
             next LOOP;
         }
     }
 
-    open my $fh, '>:utf8', $ofname;
+    print "writing $ofname\n";
+    open my $fh, '>', $ofname;
     print { $fh } $serialized;
 }
 
