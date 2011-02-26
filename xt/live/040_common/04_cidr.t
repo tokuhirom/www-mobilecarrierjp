@@ -1,13 +1,15 @@
 use t::Utils;
 use Test::More;
 use LWP::Online ":skip_all";
+use Data::Dumper;
 
 my %dat = ();
 for my $class (modules('CIDR')) {
     subtest $class => sub {
         my $dat = $class->scrape;
         is ref($dat), 'ARRAY', "$class : type check";
-        ok scalar(@$dat) >= 4;
+        ok( scalar(@$dat) >= 3, 'cidr should be higher than 4' )
+          or diag( Dumper( $class->url(), $dat ) );
         is scalar(grep /^[0-9\.]+$/, map { $_->{ip} } @$dat), scalar(@$dat);
         is scalar(grep m{^/[0-9]+$}, map { $_->{subnetmask} } @$dat), scalar(@$dat);
         $dat{$class} = $dat;
