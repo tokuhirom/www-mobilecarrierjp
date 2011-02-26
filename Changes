@@ -1,5 +1,9 @@
 Revision history for Perl extension WWW::MobileCarrierJP
 
+0.52
+
+    - softbank removes sjis pictogram information from web page!
+
 0.51
 
     - fixed test case
