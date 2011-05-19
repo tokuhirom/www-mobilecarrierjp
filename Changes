@@ -1,5 +1,9 @@
 Revision history for Perl extension WWW::MobileCarrierJP
 
+0.53
+
+    - fixed AIRHPhone scraper
+
 0.52
 
     - softbank removes sjis pictogram information from web page!
