@@ -12,7 +12,7 @@ sub scrape {
     my @result;
     for my $part (@parts) {
         next if $part =~ /削除IPアドレス帯域/;
-        while ($part =~ s{([0-9]+)(/[0-9]+)}{}) {
+        while ($part =~ s{([0-9]+\.[0-9]+\.[0-9]+\.[0-9]+)(/[0-9]+)}{}) {
             push @result,
               {
                 ip         => $1,
