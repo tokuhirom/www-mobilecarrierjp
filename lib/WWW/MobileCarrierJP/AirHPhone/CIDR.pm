@@ -1,18 +1,26 @@
 package WWW::MobileCarrierJP::AirHPhone::CIDR;
 use strict;
 use warnings;
-use Web::Scraper;
-use URI;
+use utf8;
+use WWW::MobileCarrierJP::Declare qw/get/;
 
 sub url { 'http://www.willcom-inc.com/ja/service/contents_service/create/center_info/index.html' }
 
 sub scrape {
-    scraper {
-        process '//td[@align="center" and @bgcolor="white"]/font[@size="2"]', 'cidr[]', ['TEXT', sub {
-                        m{^([0-9.]+)(/[0-9]+)};
-                        +{ ip => $1, subnetmask => $2 };
-                    }];
-    }->scrape(URI->new(__PACKAGE__->url))->{cidr};
+    my $content = get(__PACKAGE__->url);
+    my @parts = split /<font size="2" color="#4c4c4c">/, $content;
+    my @result;
+    for my $part (@parts) {
+        next if $part =~ /削除IPアドレス帯域/;
+        while ($part =~ s{([0-9]+)(/[0-9]+)}{}) {
+            push @result,
+              {
+                ip         => $1,
+                subnetmask => $2,
+              };
+        }
+    }
+    return \@result;
 }
 
 1;

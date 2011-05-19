@@ -6,6 +6,7 @@ use Data::Dumper;
 my %dat = ();
 for my $class (modules('CIDR')) {
     subtest $class => sub {
+        note "Testing $class";
         my $dat = $class->scrape;
         is ref($dat), 'ARRAY', "$class : type check";
         ok( scalar(@$dat) >= 3, 'cidr should be higher than 4' )
@@ -24,6 +25,7 @@ is scalar(grep { $_->{ip} eq '210.153.87.0' && $_->{subnetmask} eq '/24'} @$d), 
 is scalar(grep { $_->{ip} eq '203.138.181.0' && $_->{subnetmask} eq '/24'} @$d), 0, 'メール送信IP-1除外';
 is scalar(grep { $_->{ip} eq '203.138.181.0' && $_->{subnetmask} eq '/24'} @$d), 0, 'メール送信IP-2除外';
 is scalar(grep { $_->{ip} eq '203.138.203.0' && $_->{subnetmask} eq '/24'} @$d), 0, 'メール受信IP除外';
+is scalar(grep { $_->{ip} eq '219.108.2.0' && $_->{subnetmask} eq '/24'} @$d), 0, 'メール受信IP除外';
 
 done_testing;
 
