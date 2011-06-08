@@ -3,17 +3,32 @@ use strict;
 use warnings;
 use Web::Scraper;
 use URI;
+use WWW::MobileCarrierJP::Declare;
 
 sub url { 'http://www.au.kddi.com/ezfactory/tec/spec/ezsava_ip.html'; }
 
 sub scrape {
+    my $uri = URI->new(__PACKAGE__->url);
+    my $content = get($uri);
+    my $body = "";
+    my $skip_flag = 0;
+    for my $line ( split /\n/, $content ) {
+        next if $skip_flag;
+
+        if ( $line =~ m{alt="PCSVのIPアドレス帯域"} ) {
+            $skip_flag++;
+        } else {
+            $body .= $line;
+        }
+    }
+    warn $body;
     my $rows = scraper {
         process '//table[@cellspacing="1"]/tr[@bgcolor="#ffffff"]', 'ip[]', scraper {
             process '//td[position()=2]/div', 'ip',         'TEXT';
             process '//td[position()=3]/div', 'subnetmask', 'TEXT';
             process '//td[position()=4]/div', 'deprecated', 'TEXT';
         };
-    }->scrape(URI->new(__PACKAGE__->url))->{ip};
+    }->scrape(\$body)->{ip};
     return [ grep { ! $_->{deprecated} } @$rows ];
 }
 
