@@ -1,5 +1,10 @@
 Revision history for Perl extension WWW::MobileCarrierJP
 
+0.55
+
+    - remove pcsv ips from EZweb::CIDR's result.
+      (walf443)
+
 0.54
 
     FIXED AIRHPHONE SCRAPER.
