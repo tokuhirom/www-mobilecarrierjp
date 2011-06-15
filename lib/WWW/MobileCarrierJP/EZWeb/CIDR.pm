@@ -21,7 +21,6 @@ sub scrape {
             $body .= $line;
         }
     }
-    warn $body;
     my $rows = scraper {
         process '//table[@cellspacing="1"]/tr[@bgcolor="#ffffff"]', 'ip[]', scraper {
             process '//td[position()=2]/div', 'ip',         'TEXT';
