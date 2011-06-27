@@ -1,7 +1,6 @@
 package WWW::MobileCarrierJP::EZWeb::CIDR;
 use strict;
 use warnings;
-use Web::Scraper;
 use URI;
 use WWW::MobileCarrierJP::Declare;
 
