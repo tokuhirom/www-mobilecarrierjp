@@ -5,9 +5,9 @@ use WWW::MobileCarrierJP::Declare;
 
 my @url =
     map { URI->new($_) } (
-    "http://www.nttdocomo.co.jp/service/imode/make/content/pictograph/basic/index.html",
+    "http://www.nttdocomo.co.jp/service/developer/make/content/pictograph/basic/index.html",
     "http://www.nttdocomo.co.jp/english/service/imode/make/content/pictograph/basic/index.html",
-    "http://www.nttdocomo.co.jp/service/imode/make/content/pictograph/extention/index.html",
+    "http://www.nttdocomo.co.jp/service/developer/make/content/pictograph/extention/index.html",
     "http://www.nttdocomo.co.jp/english/service/imode/make/content/pictograph/extention/index.html",
 );
 sub url { \@url }

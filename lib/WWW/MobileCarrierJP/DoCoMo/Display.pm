@@ -6,7 +6,7 @@ use LWP::UserAgent;
 use Encode;
 use Carp;
 
-my $URL = 'http://www.nttdocomo.co.jp/service/imode/make/content/spec/screen_area/index.html';
+my $URL = 'http://www.nttdocomo.co.jp/service/developer/make/content/spec/screen_area/index.html';
 sub url { $URL }
 
 sub scrape {

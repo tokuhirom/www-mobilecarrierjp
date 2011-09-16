@@ -6,7 +6,7 @@ use LWP::UserAgent;
 use Web::Scraper;
 use URI;
 
-my $URL = 'http://www.nttdocomo.co.jp/service/imode/make/content/spec/flash/index.html';
+my $URL = 'http://www.nttdocomo.co.jp/service/developer/make/content/spec/flash/index.html';
 
 parse_one(
     urls => [$URL],

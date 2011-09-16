@@ -4,7 +4,7 @@ use warnings;
 use utf8;
 use WWW::MobileCarrierJP::Declare;
 
-sub url { 'http://www.nttdocomo.co.jp/service/imode/make/content/ip/'; }
+sub url { 'http://www.nttdocomo.co.jp/service/developer/make/content/ip/'; }
 
 sub scrape {
     my $content = get(url());

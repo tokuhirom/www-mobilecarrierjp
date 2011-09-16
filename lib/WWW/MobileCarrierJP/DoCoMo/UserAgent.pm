@@ -3,7 +3,7 @@ use WWW::MobileCarrierJP::Declare;
 use HTML::Selector::XPath 'selector_to_xpath';
 use charnames ':full';
 
-my $URL = 'http://www.nttdocomo.co.jp/service/imode/make/content/spec/useragent/index.html';
+my $URL = 'http://www.nttdocomo.co.jp/service/developer/make/content/spec/useragent/index.html';
 sub url { [$URL] }
 
 # 不要なカラム

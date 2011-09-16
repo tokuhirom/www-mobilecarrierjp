@@ -4,7 +4,7 @@ use HTML::TableExtract;
 use charnames ':full';
 
 parse_one(
-    urls => ["http://www.nttdocomo.co.jp/service/imode/make/content/spec/useragent/"],
+    urls => ["http://www.nttdocomo.co.jp/service/developer/make/content/spec/useragent/"],
     xpath => '//div[@class="titlept01"]/../../div[@class="section"]',
     content_filter => sub {
         local $_ = shift;
