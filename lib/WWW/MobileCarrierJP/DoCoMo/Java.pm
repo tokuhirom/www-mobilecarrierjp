@@ -3,7 +3,7 @@ use WWW::MobileCarrierJP::Declare;
 use charnames ':full';
 use URI;
 
-my $url = 'http://www.nttdocomo.co.jp/service/imode/make/content/spec/iappli/index.html';
+my $url = 'http://www.nttdocomo.co.jp/service/developer/make/content/spec/iappli/index.html';
 sub url { [ $url ] }
 
 sub scrape {
