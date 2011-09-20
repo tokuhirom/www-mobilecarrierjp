@@ -20,7 +20,16 @@ sub scrape {
               };
         }
     }
-    return \@result;
+    my $unique_of = {};
+    my @ret;
+    for my $cidr ( @result ) {
+        my $rule = $cidr->{ip} . "/" . $cidr->{subnetmask};
+        if ( ! $unique_of->{$rule} ) {
+            push @ret, $cidr;
+        }
+        $unique_of->{$rule}++;
+    }
+    return \@ret;
 }
 
 1;
