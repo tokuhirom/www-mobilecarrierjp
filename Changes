@@ -1,5 +1,9 @@
 Revision history for Perl extension WWW::MobileCarrierJP
 
+0.56
+    - follow DoCoMo URL changing. (walf443)
+    - deduplicate AirHPhone::CIDR (walf443)
+
 0.55
 
     - remove pcsv ips from EZweb::CIDR's result.
