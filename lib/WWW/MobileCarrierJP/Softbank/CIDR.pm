@@ -4,11 +4,11 @@ use warnings;
 use Web::Scraper;
 use URI;
 
-sub url { 'http://creation.mb.softbank.jp/web/web_ip.html'; }
+sub url { 'http://creation.mb.softbank.jp/mc/tech/tech_web/web_ipaddress.html'; }
 
 sub scrape {
     scraper {
-        process q{//div[@class='contents']/table/tr[7]/td/table/tr/td/table/tr},
+        process q{//table[@class='onece_table' and position() = 1]/tr},
           'cidr[]', [
             'TEXT',
             sub {
