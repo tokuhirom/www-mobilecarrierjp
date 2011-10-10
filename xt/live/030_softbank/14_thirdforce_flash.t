@@ -16,6 +16,12 @@ if ($ENV{YAML}) {
 
 cmp_ok scalar(@$res), '>', 100, 'thirdforce has many phones';
 
+if ( $ENV{DEBUG_DUMP} ) {
+    require Data::Dumper;
+    Data::Dumper->import;
+    warn Dumper($res);
+}
+
 filters { info => [qw/yaml/] };
 run {
     my $block = shift;
