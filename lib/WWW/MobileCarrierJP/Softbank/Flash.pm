@@ -5,8 +5,8 @@ use utf8;
 use charnames ':full';
 use WWW::MobileCarrierJP::Declare;
 
-my $url = 'http://creation.mb.softbank.jp/terminal/?lup=y&cat=flash';
-my $xpath = '//div/table/tr/td/table[@bordercolor="#999999"]/tr[not(@bgcolor="#ee9abb") and not(@bgcolor="#cccccc") and count(child::td) != 1]';
+my $url = 'http://creation.mb.softbank.jp/mc/terminal/terminal_info/terminal_flash.html';
+my $xpath = '//div[@class="terminaltable"]/table/tr[ not(@bgcolor="#cccccc") and count(child::td) != 1 and position() != 1]';
 
 parse_one(
     urls    => [$url],
