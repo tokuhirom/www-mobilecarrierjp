@@ -6,7 +6,7 @@ use charnames ':full';
 use WWW::MobileCarrierJP::Declare;
 
 my $url = 'http://creation.mb.softbank.jp/mc/terminal/terminal_info/terminal_service.html';
-my $xpath = '//div[@class="terminaltable"]/table/tr[not(@bgborder="#CCCCCC")]';
+my $xpath = '//div[@class="terminaltable"]/table/tr[ not(@bgcolor="#cccccc") and count(child::td) != 1 and position() != 1 ]';
 
 parse_one(
     urls    => [$url],

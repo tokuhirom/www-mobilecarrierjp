@@ -12,6 +12,11 @@ if ($ENV{YAML}) {
     $res = YAML::LoadFile($ENV{YAML});
 } else {
     $res = WWW::MobileCarrierJP::Softbank::Service->scrape();
+    if ( $ENV{DEBUG_DUMP} ) {
+        require Data::Dumper;
+        Data::Dumper->import;
+        warn Dumper($res);
+    }
 }
 
 cmp_ok scalar(@$res), '>', 100, 'thirdforce has many phones';
