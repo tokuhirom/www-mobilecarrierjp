@@ -8,6 +8,11 @@ plan tests => 2 + 2 * blocks;
 
 my $dat = WWW::MobileCarrierJP::Softbank::Java->scrape;
 is ref($dat), 'ARRAY';
+if ( $ENV{DEBUG_DUMP} ) {
+    require Data::Dumper;
+    Data::Dumper->import;
+    warn Dumper($dat);
+}
 is join(',', sort(keys %{$dat->[0]})), 'cldc,felica_api,heap,limit,location_api,midp,model,profile,size';
 
 filters { info => [qw/yaml/] };

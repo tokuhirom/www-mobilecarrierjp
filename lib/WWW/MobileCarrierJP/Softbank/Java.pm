@@ -3,8 +3,8 @@ use WWW::MobileCarrierJP::Declare;
 use charnames ':full';
 
 parse_one(
-    urls => ['http://creation.mb.softbank.jp/terminal/?lup=y&cat=sappli'],
-    xpath => q(//tr[@bgcolor="#FFFFFF" and @height="18"]),
+    urls => ['http://creation.mb.softbank.jp/mc/terminal/terminal_info/terminal_sapp.html'],
+    xpath => q(//div[@class='terminaltable']/table/tr[ not(@bgcolor="#cccccc") and count(child::td) != 1 and position() != 1]),
     scraper => scraper {
         my $limit;
         col 1 => 'model'        => 'TEXT';
