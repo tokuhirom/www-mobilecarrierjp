@@ -9,6 +9,12 @@ my $info = WWW::MobileCarrierJP::EZWeb::Model->scrape;
 is ref($info), 'ARRAY';
 ok scalar(@$info) > 30;
 
+if ( $ENV{DEBUG_DUMP} ) {
+    require Data::Dumper;
+    Data::Dumper->import;
+    warn Dumper($info);
+}
+
 ok scalar( grep { $_ } map { $_->{is_color} } @$info ) > 30, 'color';
 is scalar( grep { not defined $_ } map { $_->{is_color} } @$info ), 0;
 

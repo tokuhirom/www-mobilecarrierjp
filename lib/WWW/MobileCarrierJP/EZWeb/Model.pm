@@ -8,19 +8,19 @@ parse_one(
         col 1 => 'model_long', 'TEXT';
         col 2 => 'browser_type', 'TEXT';
 
-        col 3 => 'is_color',
+        col 4 => 'is_color',
             [ 'TEXT', sub { /モノクロ/ ? undef : 1 } ];
-        col 5 => 'display_browsing',
+        col 7 => 'display_browsing',
             [ 'TEXT', sub { /^(\d+)×(\d+)$/; +{width => $1, height => $2 } } ];
-        col 6 => 'display_wallpaper',
+        col 8 => 'display_wallpaper',
             [ 'TEXT', sub { /^(\d+)×(\d+)$/; +{width => $1, height => $2 } } ];
-        col 7 => 'gif',
+        col 9 => 'gif',
             [ 'TEXT', sub { /○/ ? 1 : undef } ];
-        col 8 => 'jpeg',
+        col 10 => 'jpeg',
             [ 'TEXT', sub { /○/ ? 1 : undef } ];
-        col 9 => 'png',
+        col 11=> 'png',
             [ 'TEXT', sub { /○|△/ ? 1 : undef } ];
-        col 12 =>'flash_lite',
+        col 14 =>'flash_lite',
             [ 'TEXT', sub { /^(\d\.\d).*$/; $1 } ];
     },
 );
