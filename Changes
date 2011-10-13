@@ -1,5 +1,8 @@
 Revision history for Perl extension WWW::MobileCarrierJP
 
+0.58
+    - Test::Base is not include to inc/. It is test_requires module. (walf443)
+
 0.57
     - follow SoftBank URL changing. (walf443)
     - follow changing Au Terminal Information. ( walf443)
