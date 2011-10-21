@@ -8,7 +8,7 @@ my $url = 'http://creation.mb.softbank.jp/mc/terminal/terminal_info/terminal_htt
 
 parse_one(
     urls  => [$url],
-    xpath => '//div[@class="terminaltable"]/table/tr[not(position()=1)]',
+    xpath => '//div[@class="terminaltable"]/table/tr[position() > 3]/td[not(@colspan=8)]/..',
     scraper => scraper {
         process 'td:nth-child(1)', 'model', 'TEXT';
 
