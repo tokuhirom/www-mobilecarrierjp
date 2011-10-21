@@ -3,7 +3,7 @@ use WWW::MobileCarrierJP::Declare;
 
 parse_one( 
     urls => ['http://creation.mb.softbank.jp/mc/terminal/terminal_info/terminal_useragent.html'],
-    xpath => q(//tr/td[@rowspan="5"]/..),
+    xpath => q(//div[@class='terminaltable']/table/tr[not(position() = 1)]/td[@rowspan="5"]/..),
     scraper => scraper {
         col 1 => 'model'      => 'TEXT';
         col 2 => 'user_agent' => ['TEXT', sub { s/\s+$//; }];
