@@ -1,5 +1,8 @@
 Revision history for Perl extension WWW::MobileCarrierJP
 
+0.59
+    - fixed Softbank::HTTPHeader's garbage. (walf443)
+
 0.58
     - Test::Base is not include to inc/. It is test_requires module. (walf443)
 
