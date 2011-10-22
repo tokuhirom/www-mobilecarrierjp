@@ -3,8 +3,10 @@ use warnings;
 use Test::Base;
 use LWP::Online ":skip_all";
 use WWW::MobileCarrierJP::Softbank::Service;
+use Mouse::Util::TypeConstraints;
+use Test::TypeConstraints;
 
-plan tests => 1 + 2*blocks;
+plan tests => 2 + 2*blocks;
 
 my $res;
 if ($ENV{YAML}) {
@@ -20,6 +22,12 @@ if ($ENV{YAML}) {
 }
 
 cmp_ok scalar(@$res), '>', 100, 'thirdforce has many phones';
+
+subtype 'Test::Softbank::Service'
+    => as 'HashRef'
+    => where { defined $_->{model} && defined $_->{sappli} && defined $_->{pc_browser} };
+
+type_isa($res, "ArrayRef[Test::ServiceType]", "type is ok");
 
 filters { info => [qw/yaml/] };
 run {

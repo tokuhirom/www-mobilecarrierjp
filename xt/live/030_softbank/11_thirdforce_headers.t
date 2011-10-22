@@ -3,6 +3,8 @@ use warnings;
 use Test::More;
 use LWP::Online ":skip_all";
 use WWW::MobileCarrierJP::Softbank::HTTPHeader;
+use Mouse::Util::TypeConstraints;
+use Test::TypeConstraints;
 
 my $rows = WWW::MobileCarrierJP::Softbank::HTTPHeader->scrape();
 
@@ -51,7 +53,11 @@ my @cases = (
     },
 );
 
-plan tests => 2*@cases;
+subtype 'Test::Softbank::HTTPHeader'
+    => as => 'HashRef'
+    => where { defined $_->{model} && defined $_->{'x-jphone-name'} && defined $_->{'x-jphone-color'} };
+
+type_isa($rows, "ArrayRef[Test::Softbank::HTTPHeader]");
 
 for my $expected (@cases) {
     my ($got, ) = grep { $expected->{model} eq $_->{model} } @$rows;
@@ -59,3 +65,4 @@ for my $expected (@cases) {
     is_deeply $got, $expected;
 }
 
+done_testing;
