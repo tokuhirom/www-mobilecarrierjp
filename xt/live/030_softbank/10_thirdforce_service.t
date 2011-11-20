@@ -2,6 +2,7 @@ use strict;
 use warnings;
 use Test::Base;
 use LWP::Online ":skip_all";
+use Test::Requires 'Test::TypeConstraints';
 use WWW::MobileCarrierJP::Softbank::Service;
 use Mouse::Util::TypeConstraints;
 use Test::TypeConstraints;
