@@ -1,5 +1,9 @@
 Revision history for Perl extension WWW::MobileCarrierJP
 
+0.60
+    - fixed Softbank::CIDR (thanks hiratara)
+    - fixed author test broken
+
 0.59
     - fixed Softbank::HTTPHeader's garbage. (walf443)
 
