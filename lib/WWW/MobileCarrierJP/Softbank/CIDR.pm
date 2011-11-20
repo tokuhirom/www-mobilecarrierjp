@@ -8,7 +8,7 @@ sub url { 'http://creation.mb.softbank.jp/mc/tech/tech_web/web_ipaddress.html'; 
 
 sub scrape {
     scraper {
-        process q{//table[@class='onece_table' and position() = 1]/tr},
+        process q{//table[@class='onece_table' and position() <= 2]/tr},
           'cidr[]', [
             'TEXT',
             sub {
