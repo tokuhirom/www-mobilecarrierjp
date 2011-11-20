@@ -3,7 +3,6 @@ use warnings;
 use Test::More;
 use WWW::MobileCarrierJP::EZWeb::Model;
 use LWP::Online ':skip_all';
-plan tests => 17;
 
 my $info = WWW::MobileCarrierJP::EZWeb::Model->scrape;
 is ref($info), 'ARRAY';
@@ -43,3 +42,4 @@ is_deeply $s001->{display_wallpaper}, {width => 480, height => 854}, 's001';
 
 diag "au has @{[ scalar(@$info) ]} phones";
 
+done_testing;
