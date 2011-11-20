@@ -28,7 +28,7 @@ subtype 'Test::Softbank::Service'
     => as 'HashRef'
     => where { defined $_->{model} && defined $_->{sappli} && defined $_->{pc_browser} };
 
-type_isa($res, "ArrayRef[Test::ServiceType]", "type is ok");
+type_isa($res, "ArrayRef[Test::Softbank::Service]", "type is ok");
 
 filters { info => [qw/yaml/] };
 run {
