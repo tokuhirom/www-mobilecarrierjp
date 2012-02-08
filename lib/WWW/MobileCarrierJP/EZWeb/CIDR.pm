@@ -27,7 +27,12 @@ sub scrape {
             process '//td[position()=4]/div', 'deprecated', 'TEXT';
         };
     }->scrape(\$body)->{ip};
-    return [ grep { ! $_->{deprecated} } @$rows ];
+    for my $row ( @$rows ) {
+        if ( $row->{deprecated} && $row->{deprecated} =~ /^\s+/ ) {
+            delete $row->{deprecated};
+        }
+    }
+    return [ grep { !$_->{deprecated} } @$rows ];
 }
 
 1;
