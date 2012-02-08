@@ -28,7 +28,7 @@ sub scrape {
         };
     }->scrape(\$body)->{ip};
     for my $row ( @$rows ) {
-        if ( $row->{deprecated} && $row->{deprecated} =~ /^\s+/ ) {
+        if ( $row->{deprecated} && $row->{deprecated} =~ /^\s+$/ ) {
             delete $row->{deprecated};
         }
     }
