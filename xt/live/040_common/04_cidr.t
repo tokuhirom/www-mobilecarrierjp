@@ -34,13 +34,12 @@ subtest 'airh' => sub {
         221.119.8.0/24
         221.119.9.0/24
         210.255.190.0/24
-        114.21.255.0/27
     )) {
         is scalar(grep { $_ eq $expected } @airh), 1, "exists $expected"
             or diag(join "\n", @airh);
     }
     for my $ip (qw(
-        221.119.5.0/24
+        114.21.255.0/27
     )) {
         is scalar(grep { $_ eq $ip } @airh), 0, "removed $ip";
     }
