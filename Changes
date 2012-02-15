@@ -1,5 +1,8 @@
 Revision history for Perl extension WWW::MobileCarrierJP
 
+0.62
+    - EZWeb::CIDR: follow site chage.
+    - AirHPhone::CIDR: fixed removed ip including.
 0.61
     - EZWeb::CIDR: fixed including PCSV site's CIDR by changing ez site from November 28 (thanks hiratara)
 
