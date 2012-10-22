@@ -1,5 +1,8 @@
 Revision history for Perl extension WWW::MobileCarrierJP
 
+0.63
+   - MISC: update inc::Module::Install for perl5.16 (thanks miyagawa)
+
 0.62
     - EZWeb::CIDR: follow site chage.
     - AirHPhone::CIDR: fixed removed ip including.
