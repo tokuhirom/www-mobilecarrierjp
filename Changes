@@ -1,5 +1,7 @@
 Revision history for Perl extension WWW::MobileCarrierJP
 
+{{$NEXT}}
+
 0.63
    - MISC: update inc::Module::Install for perl5.16 (thanks miyagawa)
 

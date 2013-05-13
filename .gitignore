@@ -10,3 +10,10 @@ inc
 inc/
 nytprof.out
 pm_to_blib
+/WWW-MobileCarrierJP-*
+/.build
+/_build_params
+/Build
+!Build/
+!META.json
+!LICENSE

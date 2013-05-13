@@ -1,0 +1,96 @@
+{
+   "abstract" : "scrape mobile carrier information",
+   "author" : [
+      "Tokuhiro Matsuno <tokuhirom gmail com>"
+   ],
+   "dynamic_config" : 0,
+   "generated_by" : "Minilla/v0.4.2, CPAN::Meta::Converter version 2.120921",
+   "license" : [
+      "perl_5"
+   ],
+   "meta-spec" : {
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+      "version" : "2"
+   },
+   "name" : "WWW-MobileCarrierJP",
+   "no_index" : {
+      "directory" : [
+         "t",
+         "xt",
+         "inc",
+         "share",
+         "eg",
+         "examples",
+         "author"
+      ]
+   },
+   "prereqs" : {
+      "configure" : {
+         "requires" : {
+            "CPAN::Meta" : "0",
+            "CPAN::Meta::Prereqs" : "0",
+            "Module::Build" : "0.38"
+         }
+      },
+      "develop" : {
+         "requires" : {
+            "Test::CPAN::Meta" : "0",
+            "Test::MinimumVersion" : "0.10108",
+            "Test::Pod" : "1.41",
+            "Test::Spellunker" : "v0.2.2"
+         }
+      },
+      "runtime" : {
+         "requires" : {
+            "Exporter" : "0.60",
+            "HTML::Selector::XPath" : "0.03",
+            "HTML::TableExtract" : "2.1",
+            "LWP::UserAgent" : "5.834",
+            "URI" : "0",
+            "Web::Scraper" : "0.24",
+            "parent" : "0",
+            "perl" : "5.008001"
+         }
+      },
+      "test" : {
+         "requires" : {
+            "LWP::Online" : "1.07",
+            "Test::Base" : "0",
+            "Test::More" : "0.96"
+         }
+      }
+   },
+   "release_status" : "unstable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/tokuhirom/www-mobilecarrierjp/issues"
+      },
+      "homepage" : "https://github.com/tokuhirom/www-mobilecarrierjp",
+      "repository" : {
+         "type" : "git",
+         "url" : "git://github.com/tokuhirom/www-mobilecarrierjp.git",
+         "web" : "https://github.com/tokuhirom/www-mobilecarrierjp"
+      }
+   },
+   "version" : "0.63",
+   "x_contributors" : [
+      "mattn <mattn@d0d07461-0603-4401-acd4-de1884942a52>",
+      "clouder <clouder@d0d07461-0603-4401-acd4-de1884942a52>",
+      "otsune <otsune@d0d07461-0603-4401-acd4-de1884942a52>",
+      "lopnor <lopnor@d0d07461-0603-4401-acd4-de1884942a52>",
+      "hirose31 <hirose31@d0d07461-0603-4401-acd4-de1884942a52>",
+      "kazeburo <kazeburo@d0d07461-0603-4401-acd4-de1884942a52>",
+      "kan <kan@d0d07461-0603-4401-acd4-de1884942a52>",
+      "tokuhirom <tokuhirom@d0d07461-0603-4401-acd4-de1884942a52>",
+      "Kimura <takefumi@chinge.coil>",
+      "Masahiro Chiba <nihen@megabbs.com>",
+      "yamaguchi.toru <zigorou@cpan.org>",
+      "Seiji Harada <liptonteask@gmail.com>",
+      "noblejasper <nobjas@gmail.com>",
+      "tnj <kitakore@gmail.com>",
+      "takuya yamamoto <y.takuan@gmail.com>",
+      "Tokuhiro Matsuno <tokuhirom@gmail.com>",
+      "Masahiro Honma <hiratara@cpan.org>",
+      "Keiji, Yoshimi <walf443@gmail.com>"
+   ]
+}
