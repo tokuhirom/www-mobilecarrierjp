@@ -72,6 +72,8 @@ LOOP: for my $module ($pluggable->plugins()) {
 
 __END__
 
+=encoding utf-8
+
 =head1 SYNOPSIS
 
     % www-mobilecarrierjp-dump_all.pl --format=JSON --datdir=/path/to/output --softbank
