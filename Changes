@@ -2,6 +2,13 @@ Revision history for Perl extension WWW::MobileCarrierJP
 
 {{$NEXT}}
 
+0.64 2013-07-22T07:16:12Z
+
+    Author: nyarla <nyarla@thotep.net>
+    Date:   Mon Jul 22 15:42:57 2013 +0900
+
+    fix for supports current willcome's webpage (on 2013-07-22)
+
 0.63
    - MISC: update inc::Module::Install for perl5.16 (thanks miyagawa)
 

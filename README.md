@@ -12,7 +12,7 @@ Japanese Mobile Phone Carrier doesn't feed any information by the machine readab
 
 This is good wrapper for this problem.
 
-This module makes machine readable format from html :)
+This module makes machine readable format from HTML :)
 
 # KNOWLEDGE
 

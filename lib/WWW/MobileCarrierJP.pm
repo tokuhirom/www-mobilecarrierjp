@@ -9,7 +9,9 @@ our $VERSION = '0.64';
 
 __END__
 
-=for stopwords softbank jpeg without gif 絵文字 EZweb nobjas takefumi masahiro chiba
+=encoding utf-8
+
+=for stopwords softbank jpeg without gif EZweb nobjas takefumi masahiro chiba
 
 =head1 NAME
 

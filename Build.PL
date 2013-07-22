@@ -25,9 +25,10 @@ my %args = (
 
     name            => 'WWW-MobileCarrierJP',
     module_name     => 'WWW::MobileCarrierJP',
-    allow_pure_perl => 0,
+    allow_pureperl => 0,
 
     script_files => [glob('script/*'), glob('bin/*')],
+    c_source     => [qw()],
 
     test_files           => ((-d '.git' || $ENV{RELEASE_TESTING}) && -d 'xt') ? 't/ xt/' : 't/',
     recursive_test_files => 1,
