@@ -1,46 +1,25 @@
 package WWW::MobileCarrierJP::AirHPhone::CIDR;
 use strict;
 use warnings;
-use utf8;
-use WWW::MobileCarrierJP::Declare qw/get/;
+use Web::Scraper;
+use URI;
 
 sub url { 'http://www.willcom-inc.com/ja/service/contents_service/create/center_info/index.html' }
 
 sub scrape {
-    my $content = get(__PACKAGE__->url);
-    my @parts = split /<font size="2" color="#4c4c4c">/, $content;
-    my @result;
-    my $removed = {};
-    for my $part (@parts) {
-        my $is_removed;
-        if ( $part =~ /削除IPアドレス帯域/ ) {
-            $is_removed++;
-        }
-        while ($part =~ s{([0-9]+\.[0-9]+\.[0-9]+\.[0-9]+)(/[0-9]+)}{}) {
-            if ( $is_removed ) {
-                $removed->{ $1 . "/" . $2 } = 1;
-            } else {
-                push @result,
-                  {
-                    ip         => $1,
-                    subnetmask => $2,
-                  };
-            }
-        }
-    }
-    my $unique_of = {};
-    my @ret;
-    for my $cidr ( @result ) {
-        my $rule = $cidr->{ip} . "/" . $cidr->{subnetmask};
-        if ( $removed->{$rule} ) {
-            next;
-        }
-        if ( ! $unique_of->{$rule} ) {
-            push @ret, $cidr;
-        }
-        $unique_of->{$rule}++;
-    }
-    return \@ret;
+    scraper {
+        process q{//*[@id="wrapper"]/div[1]/div[1]/div[1]/table[1]/tr[ position() > 1 ]/td},
+            'cidr[]' => [
+                'TEXT',
+                sub { 
+                    s/\s//g
+                },
+                sub {
+                    m{^([0-9.]+)(/[0-9]+)};
+                    +{ ip => $1, subnetmask => $2 };
+                }
+            ];
+    }->scrape(URI->new(__PACKAGE__->url))->{'cidr'};
 }
 
 1;
