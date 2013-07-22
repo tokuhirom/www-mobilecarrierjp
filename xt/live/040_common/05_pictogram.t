@@ -5,6 +5,7 @@ use Test::Base;
 use LWP::Online ":skip_all";
 use UNIVERSAL::require;
 use Data::Dumper;
+plan skip_all => "BROKEN";
 
 eval "use CAM::PDF; 1;"; ## no critic.
 if ($@) {

@@ -2,6 +2,7 @@ use strict;
 use warnings;
 use Test::Base;
 use LWP::Online ":skip_all";
+plan skip_all => "BROKEN";
 use WWW::MobileCarrierJP::Softbank::Flash;
 
 plan tests => 1 + 2*blocks;

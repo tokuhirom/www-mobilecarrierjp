@@ -4,6 +4,7 @@ use warnings;
 use utf8;
 use Test::Base;
 use LWP::Online ":skip_all";
+plan skip_all => "BROKEN";
 
 plan tests => 2 + 2 * blocks;
 
