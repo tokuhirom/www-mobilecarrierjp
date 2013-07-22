@@ -78,6 +78,8 @@ __END__
 
 =encoding utf-8
 
+=for stopwords liptontea2k
+
 =head1 NAME
 
 WWW::MobileCarrierJP::DoCoMo::Java - Java(DoCoMo)

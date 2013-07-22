@@ -43,9 +43,11 @@ __END__
 
 =encoding utf-8
 
+=for stopwords EZweb
+
 =head1 NAME
 
-WWW::MobileCarrierJP::EZWeb::PictogramInfo - 絵文字(EZWeb)
+WWW::MobileCarrierJP::EZWeb::PictogramInfo - 絵文字(EZweb)
 
 =head1 SYNOPSIS
 

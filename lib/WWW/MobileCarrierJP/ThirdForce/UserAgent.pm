@@ -17,7 +17,7 @@ __END__
 
 =head1 NAME
 
-WWW::MobileCarrierJP::ThirdForce::UserAgent - get UserAgent informtation from Softbank site(OBSOLETE)
+WWW::MobileCarrierJP::ThirdForce::UserAgent - get UserAgent information from Softbank site(OBSOLETE)
 
 =head1 SYNOPSIS
 

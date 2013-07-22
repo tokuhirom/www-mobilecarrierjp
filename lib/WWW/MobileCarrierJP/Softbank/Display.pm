@@ -102,6 +102,8 @@ __END__
 
 =encoding utf-8
 
+=for stopwords tnj
+
 =head1 NAME
 
 WWW::MobileCarrierJP::Softbank::Display - ディスプレイ(Softbank)

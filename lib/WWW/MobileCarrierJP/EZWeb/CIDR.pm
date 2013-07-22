@@ -41,6 +41,8 @@ __END__
 
 =encoding utf-8
 
+=for stopwords EZweb CIDR
+
 =head1 NAME
 
 WWW::MobileCarrierJP::EZWeb::CIDR - CIDR(EZweb)

@@ -37,6 +37,8 @@ __END__
 
 =encoding utf-8
 
+=for stopwords Shift_JIS
+
 =head1 NAME
 
 WWW::MobileCarrierJP::Softbank::PictogramInfo - 絵文字(Softbank)
@@ -48,7 +50,7 @@ WWW::MobileCarrierJP::Softbank::PictogramInfo - 絵文字(Softbank)
 
 =head1 INCOMPATIBILITY
 
-From 2010-02-26, Softbank removes sjis pictogram code from web page.
+From 2010-02-26, Softbank removes Shift_JIS pictogram code from web page.
 
 =head1 AUTHOR
 

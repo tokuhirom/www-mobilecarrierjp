@@ -43,6 +43,8 @@ __END__
 
 =encoding utf-8
 
+=for stopwords HTMLVersion DoCoMo kb
+
 =head1 NAME
 
 WWW::MobileCarrierJP::DoCoMo::HTMLVersion - HTMLVersion(DoCoMo)

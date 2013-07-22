@@ -3,11 +3,13 @@ use strict;
 use warnings;
 use 5.008001;
 
-our $VERSION = '0.63';
+our $VERSION = '0.64';
 
 1;
 
 __END__
+
+=for stopwords softbank jpeg without gif 絵文字 EZweb nobjas takefumi masahiro chiba
 
 =head1 NAME
 
@@ -23,7 +25,7 @@ Japanese Mobile Phone Carrier doesn't feed any information by the machine readab
 
 This is good wrapper for this problem.
 
-This module makes machine readable format from html :)
+This module makes machine readable format from HTML :)
 
 =head1 KNOWLEDGE
 

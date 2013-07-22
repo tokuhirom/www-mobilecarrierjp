@@ -30,6 +30,8 @@ __END__
 
 =encoding utf-8
 
+=for stopwords Model EZweb
+
 =head1 NAME
 
 WWW::MobileCarrierJP::EZWeb::Model - Model(EZweb)

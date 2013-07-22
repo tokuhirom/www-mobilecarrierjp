@@ -42,9 +42,11 @@ __END__
 
 =encoding utf-8
 
+=for stopwords Device ID EZweb
+
 =head1 NAME
 
-WWW::MobileCarrierJP::EZWeb::DeviceID - DeviceID(DoCoMo)
+WWW::MobileCarrierJP::EZWeb::DeviceID - Device ID(EZweb)
 
 =head1 SYNOPSIS
 
