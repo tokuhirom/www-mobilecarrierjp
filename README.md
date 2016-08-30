@@ -24,17 +24,17 @@ softbank phone supports jpeg(without type C2).
 
 softbank phone supports gif(without type C, P, W).
 
-[http://www2.developers.softbankmobile.co.jp/dp/tool\_dl/download.php?docid=120&companyid=](http://www2.developers.softbankmobile.co.jp/dp/tool\_dl/download.php?docid=120&companyid=)
+[http://www2.developers.softbankmobile.co.jp/dp/tool\_dl/download.php?docid=120&companyid=](http://www2.developers.softbankmobile.co.jp/dp/tool_dl/download.php?docid=120&companyid=)
 
 # COOKBOOK
 
 - HOW DO I GET YAMLs FASTER?
 
-    use [HTML::TreeBuilder::LibXML](http://search.cpan.org/perldoc?HTML::TreeBuilder::LibXML).
+    use [HTML::TreeBuilder::LibXML](https://metacpan.org/pod/HTML::TreeBuilder::LibXML).
 
 # AUTHOR
 
-Tokuhiro Matsuno <tokuhirom gmail com>
+Tokuhiro Matsuno &lt;tokuhirom gmail com>
 
 # THANKS TO
 

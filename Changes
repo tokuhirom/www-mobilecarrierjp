@@ -2,6 +2,14 @@ Revision history for Perl module WWW::MobileCarrierJP
 
 {{$NEXT}}
 
+0.65 2016-08-30T10:38:32Z
+
+    commit 0e6d9b0b8d9dd31db539d41d5025dc8f0edf6a5e
+    Author: Kazuma Shiraiwa <cyberlib@gmail.com>
+    Date:   Tue Aug 30 12:14:02 2016 +0900
+
+        背景色及び備考欄による取得条件を現状にあわせて修正しました
+
 0.64 2013-07-22T07:16:12Z
     - fix for supports current willcome's webpage (on 2013-07-22)
       (nyarla <nyarla@thotep.net>)
