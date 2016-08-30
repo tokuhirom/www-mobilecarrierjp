@@ -21,15 +21,19 @@ sub scrape {
         }
     }
     my $rows = scraper {
-        process '//table[@cellspacing="1"]/tr[@bgcolor="#ffffff"]', 'ip[]', scraper {
+        process '//table[@cellspacing="1"]/tr', 'ip[]', scraper {
+            process '//td[position()=1]/div', 'num',        'TEXT';
             process '//td[position()=2]/div', 'ip',         'TEXT';
             process '//td[position()=3]/div', 'subnetmask', 'TEXT';
             process '//td[position()=4]/div', 'deprecated', 'TEXT';
         };
     }->scrape(\$body)->{ip};
     for my $row ( @$rows ) {
-        if ( $row->{deprecated} && $row->{deprecated} =~ /^\s+$/ ) {
+        if ( $row->{num} && $row->{num} =~ /^\d+$/) {
             delete $row->{deprecated};
+        }
+        else {
+            $row->{deprecated} = 1;
         }
     }
     return [ grep { !$_->{deprecated} } @$rows ];
